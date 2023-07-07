@@ -1,0 +1,96 @@
+#calendar {
+    .weekEnd {
+        color: $gray-dark;
+    }
+
+    .empty {
+        border: none;
+        background-color: $gray-light;
+    }
+
+    table,
+    th,
+    td {
+        // border: 1px solid $gray;
+        border-collapse: separate;
+        // background-color: $white;
+        // text-align: center;
+        border-spacing: 24px;
+    }
+
+
+    table {
+        background-color: $gray-light;
+
+        thead {
+
+            #nextMonth,
+            #previousMonth {
+                width: 100%;
+            }
+
+            #calendar-title {
+                text-align: center;
+                font-family: $font-1-bold;
+                font-size: 2rem;
+            }
+
+            .dayNameToday {
+                color: $orange;
+            }
+        }
+
+        tbody {
+            .today {
+                background-color: $gray;
+                border-top: 2px solid $orange;
+
+
+                >.dayNumber {
+                    color: $orange;
+                }
+            }
+
+            tr {
+                td {
+                    --size: 100px;
+                    width: 200px;
+                    height: 100px;
+                    min-height: var(--size);
+                    vertical-align: top;
+                    padding: 8px;
+                    transition: all .2;
+                    border-top: 2px solid $black;
+
+                    >* {
+                        margin-bottom: 8px;
+                    }
+
+                    &.weekEnd {
+                        border-top: 2px solid $gray-dark;
+                    }
+
+                    &:hover {
+                        transition: all .2;
+                        background-color: $gray;
+                    }
+
+                    .event {
+                        &-title {
+                            font-family: $font-1-medium;
+                        }
+                        &-hour {
+                            color: $gray-dark;
+                        }
+                    }
+
+                    .dayNumber {
+                        text-align: start;
+                        font-family: $font-1-medium;
+                        font-size: 2rem;
+                    }
+                }
+            }
+        }
+    }
+}

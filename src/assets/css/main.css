@@ -1,0 +1,109 @@
+@font-face {
+  font-family: "kelsonregular";
+  src: url("../font/kelson/kelson-webfont.woff2") format("woff2"), url("../font/kelson/kelson-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "kelsonbold";
+  src: url("../font/kelson/kelson-bold-webfont.woff2") format("woff2"), url("../font/kelson/kelson-bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "kelsonextrabold";
+  src: url("../font/kelson/kelson-extrabold-webfont.woff2") format("woff2"), url("../font/kelson/kelson-extrabold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "kelsonlight";
+  src: url("../font/kelson/kelson-light-webfont.woff2") format("woff2"), url("../font/kelson/kelson-light-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "kelsonmedium";
+  src: url("../font/kelson/kelson-medium-webfont.woff2") format("woff2"), url("../font/kelson/kelson-medium-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "kelsonthin";
+  src: url("../font/kelson/kelson-thin-webfont.woff2") format("woff2"), url("../font/kelson/kelson-thin-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+#calendar .weekEnd {
+  color: #71706f;
+}
+#calendar .empty {
+  border: none;
+  background-color: #f7fafc;
+}
+#calendar table,
+#calendar th,
+#calendar td {
+  border-collapse: separate;
+  border-spacing: 24px;
+}
+#calendar table {
+  background-color: #f7fafc;
+}
+#calendar table thead #nextMonth,
+#calendar table thead #previousMonth {
+  width: 100%;
+}
+#calendar table thead #calendar-title {
+  text-align: center;
+  font-family: "kelsonbold";
+  font-size: 2rem;
+}
+#calendar table thead .dayNameToday {
+  color: #f16348;
+}
+#calendar table tbody .today {
+  background-color: #f0efeb;
+  border-top: 2px solid #f16348;
+}
+#calendar table tbody .today > .dayNumber {
+  color: #f16348;
+}
+#calendar table tbody tr td {
+  --size: 100px;
+  width: 200px;
+  height: 100px;
+  min-height: var(--size);
+  vertical-align: top;
+  padding: 8px;
+  transition: all 0.2;
+  border-top: 2px solid #000;
+}
+#calendar table tbody tr td > * {
+  margin-bottom: 8px;
+}
+#calendar table tbody tr td.weekEnd {
+  border-top: 2px solid #71706f;
+}
+#calendar table tbody tr td:hover {
+  transition: all 0.2;
+  background-color: #f0efeb;
+}
+#calendar table tbody tr td .event-title {
+  font-family: "kelsonmedium";
+}
+#calendar table tbody tr td .event-hour {
+  color: #71706f;
+}
+#calendar table tbody tr td .dayNumber {
+  text-align: start;
+  font-family: "kelsonmedium";
+  font-size: 2rem;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "kelsonregular";
+}/*# sourceMappingURL=main.css.map */
