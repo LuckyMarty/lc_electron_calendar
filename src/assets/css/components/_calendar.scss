@@ -1,26 +1,68 @@
+body {
+    margin: 50px;
+}
+
 #calendar {
+    &-header {
+        display: grid;
+        grid-template-columns: 2fr 4fr;
+        margin: 0 24px 50px;
+        align-items: center;
+
+        >div {
+            &:first-child {
+                >div {
+                    display: grid;
+                    grid-template-columns: 1fr 100px;
+
+                    button {
+                        height: 100%;
+                        width: 50%;
+                        border: none;
+                        background-color: transparent;
+                        font-size: large;
+                    }
+                }
+            }
+
+            &:last-child {
+                justify-self: end;
+
+                >button {
+                    padding: 16px 32px;
+                    border: none;
+                    background-color: $black;
+                    color: $white;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+
+
+
     .weekEnd {
         color: $gray-dark;
     }
 
     .empty {
         border: none;
-        background-color: $gray-light;
+
+        &:hover {
+            background-color: transparent;
+        }
     }
 
     table,
     th,
     td {
-        // border: 1px solid $gray;
         border-collapse: separate;
-        // background-color: $white;
-        // text-align: center;
         border-spacing: 24px;
     }
 
 
     table {
-        background-color: $gray-light;
 
         thead {
 
@@ -79,6 +121,7 @@
                         &-title {
                             font-family: $font-1-medium;
                         }
+
                         &-hour {
                             color: $gray-dark;
                         }

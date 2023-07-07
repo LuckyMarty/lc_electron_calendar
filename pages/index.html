@@ -8,12 +8,21 @@
   <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
 
   <link rel="stylesheet" href="../src/assets/css/main.css">
-
-
-  <title>Hello World!</title>
 </head>
 
 <body>
+
+  <div id="calendar-header">
+    <div>
+      <div>
+        <h1 id="calendar-title"></h1>
+        <div id="calendar-navigation-buttons"></div>
+      </div>
+    </div>
+    
+    <div><button id="calendar-addEvent">Add event</button></div>
+  </div>
+
   <div id="calendar"></div>
 
   <!-- You can also require other files to run in this process -->
