@@ -9,8 +9,6 @@ export function windowEventAdd() {
         title: "Add New Event",
 
         icon: path.join(__dirname, "../../../src/assets/img/icon.png"),
-
-
     })
 
     window.setMenuBarVisibility(false)
