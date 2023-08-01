@@ -7,7 +7,7 @@
 
 
 const { ipcRenderer } = require('electron');
-import calendar from "./calendar.js";
+import calendar from "../calendar.js";
 
 
 // Display Calendar

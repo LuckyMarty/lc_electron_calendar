@@ -13,7 +13,6 @@ function createWindow() {
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
-      preload: path.join(__dirname, "../front/preload.js"),
     },
   });
 
@@ -22,7 +21,7 @@ function createWindow() {
   mainWindow.maximize()
 
   // and load the index.html of the app.
-  mainWindow.loadFile(path.join("./pages/index.html"));
+  mainWindow.loadFile(path.join("./pages/main.html"));
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
