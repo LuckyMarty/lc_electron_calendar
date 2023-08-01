@@ -20,7 +20,7 @@ export function eventGetAll(): Promise<IEvent[]> {
 export function eventAdd(event: IEvent) {
     return new Promise((resolve, rej) => {
         sql.query('INSERT INTO `event` (`id`, `date_deb`, `date_fin`, `titre`, `location`, `categorie`, `statut`, `description`, `transparence`, `nbMaj`) VALUES ( NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
-        [event.date_deb, event.date_end, event.titre, event.location, event.category, event.status, event.description, event.transparence, event.nbOfUpdate],
+        [event.date_deb, event.date_fin, event.titre, event.location, event.category, event.status, event.description, event.transparence, event.nbOfUpdate],
         (err: Error) => {
             if (err) rej(err);
             else resolve("Event added");

@@ -24,7 +24,7 @@ if (addEventForm) {
         // Prepare Data
         const newEvent: IEvent = {
             date_deb: splitDate(dates)[0],
-            date_end: splitDate(dates)[1],
+            date_fin: splitDate(dates)[1],
             titre,
             location,
             category,

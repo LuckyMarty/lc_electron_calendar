@@ -1,7 +1,7 @@
 export interface IEvent {
     id?: number
     date_deb: Date
-    date_end: Date
+    date_fin: Date
     titre: string
     location: string
     category: string
