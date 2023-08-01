@@ -34,12 +34,45 @@
   font-weight: normal;
   font-style: normal;
 }
+body {
+  margin: 50px;
+}
+
+#calendar-header {
+  display: grid;
+  grid-template-columns: 2fr 4fr;
+  margin: 0 24px 50px;
+  align-items: center;
+}
+#calendar-header > div:first-child > div {
+  display: grid;
+  grid-template-columns: 1fr 100px;
+}
+#calendar-header > div:first-child > div button {
+  height: 100%;
+  width: 50%;
+  border: none;
+  background-color: transparent;
+  font-size: large;
+}
+#calendar-header > div:last-child {
+  justify-self: end;
+}
+#calendar-header > div:last-child > button {
+  padding: 16px 32px;
+  border: none;
+  background-color: #000;
+  color: #fff;
+  font-size: 16px;
+}
 #calendar .weekEnd {
   color: #71706f;
 }
 #calendar .empty {
   border: none;
-  background-color: #f7fafc;
+}
+#calendar .empty:hover {
+  background-color: transparent;
 }
 #calendar table,
 #calendar th,
@@ -47,8 +80,10 @@
   border-collapse: separate;
   border-spacing: 24px;
 }
-#calendar table {
-  background-color: #f7fafc;
+#calendar table thead {
+  position: sticky;
+  top: 0;
+  background-color: white;
 }
 #calendar table thead #nextMonth,
 #calendar table thead #previousMonth {

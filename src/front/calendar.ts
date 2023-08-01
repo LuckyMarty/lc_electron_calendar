@@ -1,18 +1,43 @@
-export default function calendar() {
+import { IEvent } from "../interface/eventInterface.js";
+import { addEvent } from "./calendar/function.js";
+const { ipcRenderer } = require('electron');
+
+export default async function calendar() {
+    // Init
     const currentDate: Date = new Date();
     let currentMonth: number = currentDate.getMonth();
     let currentYear: number = currentDate.getFullYear();
     displayCalendar(currentMonth, currentYear);
 
-    function displayCalendar(month: number, year: number): void {
+
+    async function displayCalendar(month: number, year: number) {
         const calendarContainer: HTMLElement | null = document.getElementById("calendar");
         if (calendarContainer) {
             calendarContainer.innerHTML = '';
             const firstDay: Date = new Date(year, month, 1);
             const daysInMonth: number = new Date(year, month + 1, 0).getDate();
             const startingDay: number = firstDay.getDay();
-            console.log(currentDate.getDay());
+
             
+            // Calendar Title
+            const calendarTitle = document.querySelector("#calendar-title");
+            calendarTitle ? calendarTitle.textContent = monthName(month) + " " + year.toString() : '';
+
+
+            // Buttons
+            const calendarNavigationButtons = document.querySelector("#calendar-navigation-buttons");
+            calendarNavigationButtons && (calendarNavigationButtons.innerHTML = '');
+            // → Previous
+            const prevButton = document.createElement('button');
+            prevButton.id = "previousMonth";
+            prevButton.innerHTML = "&#10094;";
+            calendarNavigationButtons && calendarNavigationButtons.append(prevButton);
+            // → Next
+            const nextButton = document.createElement('button');
+            nextButton.id = "nextMonth";
+            nextButton.innerHTML = "&#10095;";
+            calendarNavigationButtons && calendarNavigationButtons.append(nextButton);
+
 
             // Create Calendar Table
             const calendarTable: HTMLTableElement = document.createElement("table");
@@ -20,24 +45,7 @@ export default function calendar() {
             // Header
             const header: HTMLTableSectionElement = calendarTable.createTHead();
             const headerRow: HTMLTableRowElement = header.insertRow();
-            // → Previous Month
-            const prevArrowCell: HTMLTableCellElement = headerRow.insertCell();
-            const prevButton = document.createElement('button');
-            prevButton.id = "previousMonth";
-            prevButton.innerHTML = "&#10094;";
-            prevArrowCell.append(prevButton);
-            // → Current Month
-            const headerCell: HTMLTableCellElement = headerRow.insertCell();
-            headerCell.setAttribute("colspan", "5");
-            headerCell.id = "calendar-title";
-            headerCell.textContent = monthName(month) + " " + year;
-            // → Previous Month
-            const nextArrowCell: HTMLTableCellElement = headerRow.insertCell();
-            const nextButton = document.createElement('button');
-            nextButton.id = "nextMonth";
-            nextButton.innerHTML = "&#10095;";
-            nextArrowCell.append(nextButton);
-            // → Days Name
+
             const weekdaysRow: HTMLTableRowElement = calendarTable.insertRow();
             for (let i: number = 0; i < dayName().length; i++) {
                 const cell: HTMLTableCellElement = weekdaysRow.insertCell();
@@ -46,12 +54,14 @@ export default function calendar() {
                 }
 
                 // Current Day Name
-                if (currentDate.getDay()-1 !== -1) {
-                    if (i === currentDate.getDay()-1) {
+                if (currentDate.getDay() - 1 !== -1) {
+                    if (i === currentDate.getDay() - 1 && currentMonth === currentDate.getMonth() && currentYear === currentDate.getFullYear()) {
                         cell.classList.add('dayNameToday');
                     }
                 } else {
-                    cell.classList.add('dayNameToday');
+                    if (i === currentDate.getDay() + 1 && currentMonth === currentDate.getMonth() && currentYear === currentDate.getFullYear()) {
+                        cell.classList.add('dayNameToday');
+                    }
                 }
 
                 cell.textContent = dayName(i).name;
@@ -98,6 +108,31 @@ export default function calendar() {
                         if (col === 6 || col === 7) {
                             cell.classList.add('weekEnd');
                         }
+
+                        const result = await ipcRenderer.invoke('bdd-event-get-all') as IEvent[];
+                        let events: Array<IEvent> = [];
+                        if (result) {
+                            result.forEach(element => {
+                                // console.log(element.date_deb.getDate(), date);
+                                // console.log(element.date_deb.getMonth(), currentMonth);
+                                // console.log(element.date_deb.getFullYear(), currentYear);
+
+                                if (element.date_deb.getDate() === date && element.date_deb.getMonth() === currentMonth && element.date_deb.getFullYear() === currentYear) {
+                                    events.push(element);
+                                }
+                            });
+                        }
+
+                        if (events) {
+                            events.forEach(event => {
+                                cell.append(addEvent(event.titre, event.description));
+                            });
+                        }
+
+
+                        // if (events) {
+                        //     cell.append(events)
+                        // }
 
                         date++;
                     }
@@ -147,21 +182,25 @@ export default function calendar() {
 
 
     // Functions
-    function addEvent(title: string, content: string): HTMLDivElement {
-        // Events
-        const event = document.createElement('div');
-        const eventTitle = document.createElement('div');
-        const eventTimes = document.createElement('div');
-        // → Event Container
-        event.className = "event";
-        // → Event Title
-        eventTitle.className = "event-title";
-        eventTitle.innerText = title;
-        // → Event Hour
-        eventTimes.className = "event-hour";
-        eventTimes.innerText = content;
-        event.append(eventTitle, eventTimes)
+    async function displayEvent(): Promise<IEvent[]> {
+        return await ipcRenderer.invoke('bdd-event-get-all');
 
-        return event;
+        // let result: Array<IEvent> = await ipcRenderer.invoke('bdd-event-get-all');
+        // console.log(result);
+
+        // let events: Array<IEvent> = [];
+        // if (result?.length !== 0) {
+        //     result.forEach(element => {
+        //         if (element.date_deb.getDay() === day && element.date_deb.getMonth() === month && element.date_deb.getFullYear() === year) {
+        //             events.push(element);
+        //         }
+        //     });
+        // }
+
+        // if (events.length !== 0) {
+        //     events.forEach(event => {
+        //         addEvent(eventtitre, event.description);
+        //     });
+        // }
     }
 }

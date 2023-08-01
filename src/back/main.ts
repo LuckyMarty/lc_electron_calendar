@@ -1,22 +1,66 @@
-import { app, BrowserWindow } from "electron";
+import { app, BrowserWindow, Menu } from "electron";
 import * as path from "path";
+import EventEvent from "./event/EventEvent";
+import { windowEventAdd } from "./window/event";
 
+// ************************
+// MAIN WINDOW
+// ************************
 function createWindow() {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    height: 600,
+    icon: path.join(__dirname, "../../src/assets/img/icon.png"),
     webPreferences: {
       nodeIntegration: true,
-      preload: path.join(__dirname, "preload.js"),
+      contextIsolation: false,
+      preload: path.join(__dirname, "../front/preload.js"),
     },
-    width: 800,
   });
 
+  EventEvent(mainWindow);
+
+  mainWindow.maximize()
+
   // and load the index.html of the app.
-  mainWindow.loadFile(path.join(__dirname, "../pages/index.html"));
+  mainWindow.loadFile(path.join("./pages/index.html"));
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
+
+  // Custom Menu Bar
+  const menuTpl: any = [
+    {
+      label: "General",
+      type: "submenu",
+      submenu: [
+        {
+          label: 'Exit',
+          type: 'normal',
+          role: 'quit'
+        }
+      ]
+    },
+    {
+      label: "Event",
+      type: "submenu",
+      submenu: [
+        {
+          label: 'Add',
+          type: 'normal',
+          click: () => {
+            windowEventAdd(mainWindow);
+          }
+        },
+        {
+          type: 'separator'
+        }
+      ]
+    }
+  ];
+  
+  const menu = Menu.buildFromTemplate(menuTpl);
+  mainWindow.setMenu(menu);
+  Menu.setApplicationMenu(menu);
 }
 
 // This method will be called when Electron has finished
