@@ -1,0 +1,39 @@
+#addEventForm {
+    margin: 50px 0;
+    padding-bottom: 50px;
+
+    >div {
+        display: flex;
+        width: 100%;
+        margin-bottom: 25px;
+
+        label {
+            width: 25%;
+        }
+
+        input,
+        textarea {
+            width: 75%;
+            padding: 14px;
+        }
+    }
+
+    .required label:after {
+        color: #e32;
+        content: ' *';
+        display:inline;
+    }
+
+    input[type=submit] {
+        float: right;
+
+        width: 200px;
+        border: none;
+        padding: 14px;
+        background-color: $black;
+        
+        font-size: large;
+        color: $white;
+    
+    }
+}

@@ -136,6 +136,38 @@ body {
   font-size: 2rem;
 }
 
+#addEventForm {
+  margin: 50px 0;
+  padding-bottom: 50px;
+}
+#addEventForm > div {
+  display: flex;
+  width: 100%;
+  margin-bottom: 25px;
+}
+#addEventForm > div label {
+  width: 25%;
+}
+#addEventForm > div input,
+#addEventForm > div textarea {
+  width: 75%;
+  padding: 14px;
+}
+#addEventForm .required label:after {
+  color: #e32;
+  content: " *";
+  display: inline;
+}
+#addEventForm input[type=submit] {
+  float: right;
+  width: 200px;
+  border: none;
+  padding: 14px;
+  background-color: #000;
+  font-size: large;
+  color: #fff;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
