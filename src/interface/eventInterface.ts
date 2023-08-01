@@ -1,8 +1,8 @@
 export interface IEvent {
     id?: number
-    date_start: Date
+    date_deb: Date
     date_end: Date
-    title: string
+    titre: string
     location: string
     category: string
     status: string

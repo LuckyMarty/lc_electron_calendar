@@ -80,6 +80,11 @@ body {
   border-collapse: separate;
   border-spacing: 24px;
 }
+#calendar table thead {
+  position: sticky;
+  top: 0;
+  background-color: white;
+}
 #calendar table thead #nextMonth,
 #calendar table thead #previousMonth {
   width: 100%;

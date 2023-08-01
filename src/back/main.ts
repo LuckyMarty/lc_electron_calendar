@@ -3,41 +3,6 @@ import * as path from "path";
 import EventEvent from "./event/EventEvent";
 import { windowEventAdd } from "./window/event";
 
-EventEvent();
-
-
-
-
-const menuTpl: any = [
-  {
-    label: "Event",
-    type: "submenu",
-    submenu: [
-      {
-        label: 'Add',
-        type: 'normal',
-        click: () => {
-          console.log('click sur menu');
-          windowEventAdd();
-        }
-      },
-      {
-        type: 'separator'
-      },
-      {
-        label: 'Exit',
-        type: 'normal',
-        role: 'quit'
-      }
-    ]
-  }
-]
-const menu = Menu.buildFromTemplate(menuTpl)
-
-
-Menu.setApplicationMenu(menu)
-
-
 function createWindow() {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
@@ -49,17 +14,46 @@ function createWindow() {
     },
   });
 
+  EventEvent(mainWindow);
+
   mainWindow.maximize()
 
   // and load the index.html of the app.
   mainWindow.loadFile(path.join("./pages/index.html"));
 
+  // Open the DevTools.
+  mainWindow.webContents.openDevTools();
+
+
+  const menuTpl: any = [
+    {
+      label: "Event",
+      type: "submenu",
+      submenu: [
+        {
+          label: 'Add',
+          type: 'normal',
+          click: () => {
+            // console.log('click sur menu');
+            windowEventAdd(mainWindow);
+          }
+        },
+        {
+          type: 'separator'
+        },
+        {
+          label: 'Exit',
+          type: 'normal',
+          role: 'quit'
+        }
+      ]
+    }
+  ]
+  const menu = Menu.buildFromTemplate(menuTpl);
 
   mainWindow.setMenu(menu)
 
-
-  // Open the DevTools.
-  mainWindow.webContents.openDevTools();
+  Menu.setApplicationMenu(menu)
 }
 
 // This method will be called when Electron has finished

@@ -23,7 +23,7 @@ import { getInput, getValueAsDate, getValueAsString } from "./utils.js";
 
     const addEventForm = document.querySelector('#addEventForm');
     if (addEventForm) {
-        const date_start = getInput("#add_event_date_from");
+        const date_deb = getInput("#add_event_date_from");
         const date_end = getInput("#add_event_date_to");
         const title = getInput("#add_event_title");
         const location = getInput("#add_event_location");
@@ -36,9 +36,9 @@ import { getInput, getValueAsDate, getValueAsString } from "./utils.js";
             e.preventDefault()
 
             const newEvent: IEvent = {
-                date_start: new Date(date_start.value),
+                date_deb: new Date(date_deb.value),
                 date_end: new Date(date_end.value),
-                title: title.value,
+                titre: title.value,
                 location: location.value,
                 category: category.value,
                 status: status.value,

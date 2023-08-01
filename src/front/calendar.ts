@@ -1,4 +1,6 @@
+import { IEvent } from "../interface/eventInterface.js";
 import { addEvent } from "./calendar/function.js";
+// import { ipcRenderer } from "electron";
 
 const { ipcRenderer } = require('electron');
 
@@ -9,7 +11,7 @@ export default async function calendar() {
     displayCalendar(currentMonth, currentYear);
 
 
-    function displayCalendar(month: number, year: number): void {
+    async function displayCalendar(month: number, year: number) {
         const calendarContainer: HTMLElement | null = document.getElementById("calendar");
         if (calendarContainer) {
             calendarContainer.innerHTML = '';
@@ -45,7 +47,7 @@ export default async function calendar() {
             // Header
             const header: HTMLTableSectionElement = calendarTable.createTHead();
             const headerRow: HTMLTableRowElement = header.insertRow();
-          
+
             const weekdaysRow: HTMLTableRowElement = calendarTable.insertRow();
             for (let i: number = 0; i < dayName().length; i++) {
                 const cell: HTMLTableCellElement = weekdaysRow.insertCell();
@@ -109,7 +111,30 @@ export default async function calendar() {
                             cell.classList.add('weekEnd');
                         }
 
-                        // displayEvent();
+                        const result = await ipcRenderer.invoke('bdd-event-get-all') as IEvent[];
+                        let events: Array<IEvent> = [];
+                        if (result) {
+                            result.forEach(element => {
+                                // console.log(element.date_deb.getDate(), date);
+                                // console.log(element.date_deb.getMonth(), currentMonth);
+                                // console.log(element.date_deb.getFullYear(), currentYear);
+
+                                if (element.date_deb.getDate() === date && element.date_deb.getMonth() === currentMonth && element.date_deb.getFullYear() === currentYear) {
+                                    events.push(element);
+                                }
+                            });
+                        }
+
+                        if (events) {
+                            events.forEach(event => {
+                                cell.append(addEvent(event.titre, event.description));
+                            });
+                        }
+
+
+                        // if (events) {
+                        //     cell.append(events)
+                        // }
 
                         date++;
                     }
@@ -159,8 +184,25 @@ export default async function calendar() {
 
 
     // Functions
-    async function displayEvent(day: number, year: number, month: number) {
-        let result: any = await ipcRenderer.invoke('bdd-event-get-all');
-        console.log(result);
+    async function displayEvent(): Promise<IEvent[]> {
+        return await ipcRenderer.invoke('bdd-event-get-all');
+
+        // let result: Array<IEvent> = await ipcRenderer.invoke('bdd-event-get-all');
+        // console.log(result);
+
+        // let events: Array<IEvent> = [];
+        // if (result?.length !== 0) {
+        //     result.forEach(element => {
+        //         if (element.date_deb.getDay() === day && element.date_deb.getMonth() === month && element.date_deb.getFullYear() === year) {
+        //             events.push(element);
+        //         }
+        //     });
+        // }
+
+        // if (events.length !== 0) {
+        //     events.forEach(event => {
+        //         addEvent(eventtitre, event.description);
+        //     });
+        // }
     }
 }
