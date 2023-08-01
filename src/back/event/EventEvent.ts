@@ -3,6 +3,7 @@ import * as path from "path";
 import { eventAdd, eventGetAll } from "../model/EventModel"
 import { IEvent } from "../../interface/eventInterface";
 import { windowEventAdd } from "../window/addEventWindow";
+import { windowEventView } from "../window/viewEventWindow";
 
 export default (parent: BrowserWindow) => {
     // ************************
@@ -24,5 +25,10 @@ export default (parent: BrowserWindow) => {
     // Add Event
     ipcMain.handle('add-event', () => {
         windowEventAdd(parent);
+    })
+    
+    // View Event
+    ipcMain.on('view-event', (event, eventId) => {
+        windowEventView(parent, eventId);
     })
 }

@@ -1,3 +1,5 @@
+const { ipcRenderer } = require('electron');
+
 export function displayEvent(id: number, title: string, content: string): HTMLDivElement {
     // Events
     const event = document.createElement('div');
@@ -6,6 +8,7 @@ export function displayEvent(id: number, title: string, content: string): HTMLDi
     // → Event Container
     event.id = `id-${id.toString()}`;
     event.className = "event";
+    event.onclick = () => viewEvent(id);
     // → Event Title
     eventTitle.className = "event-title";
     eventTitle.innerText = title;
@@ -15,6 +18,12 @@ export function displayEvent(id: number, title: string, content: string): HTMLDi
     event.append(eventTitle, eventTimes)
 
     return event;
+}
+
+
+// Pass Event Id to ViewEventWindow
+function viewEvent(eventId: Number) {
+    ipcRenderer.send('view-event', eventId);
 }
 
 
@@ -46,5 +55,5 @@ export function getDateToString(date: Date) {
 }
 
 export function getTimeToString(date: Date) {
-    return date.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit', hour12: false});
+    return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false });
 }
