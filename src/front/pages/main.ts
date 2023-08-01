@@ -17,5 +17,5 @@ calendar();
 // Add Event Button
 const addEventButton = document?.querySelector("#calendar-addEvent");
 addEventButton?.addEventListener('click', () => {
-    ipcRenderer.invoke('open');
+    ipcRenderer.invoke('add-event');
 })

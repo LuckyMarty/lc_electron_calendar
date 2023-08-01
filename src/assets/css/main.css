@@ -124,6 +124,9 @@ body {
   transition: all 0.2;
   background-color: #f0efeb;
 }
+#calendar table tbody tr td .event {
+  cursor: pointer;
+}
 #calendar table tbody tr td .event-title {
   font-family: "kelsonmedium";
 }

@@ -1,7 +1,7 @@
 import { app, BrowserWindow, Menu } from "electron";
 import * as path from "path";
 import EventEvent from "./event/EventEvent";
-import { windowEventAdd } from "./window/event";
+import { windowEventAdd } from "./window/addEventWindow";
 
 // ************************
 // MAIN WINDOW

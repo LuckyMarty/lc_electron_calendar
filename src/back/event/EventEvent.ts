@@ -2,7 +2,7 @@ import { BrowserWindow, ipcMain } from "electron"
 import * as path from "path";
 import { eventAdd, eventGetAll } from "../model/EventModel"
 import { IEvent } from "../../interface/eventInterface";
-import { windowEventAdd } from "../window/event";
+import { windowEventAdd } from "../window/addEventWindow";
 
 export default (parent: BrowserWindow) => {
     // ************************
@@ -22,7 +22,7 @@ export default (parent: BrowserWindow) => {
     // WINDOWS
     // ************************
     // Add Event
-    ipcMain.handle('open', () => {
+    ipcMain.handle('add-event', () => {
         windowEventAdd(parent);
     })
 }
