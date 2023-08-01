@@ -1,10 +1,9 @@
 import { IEvent } from "../interface/eventInterface.js";
 import { addEvent } from "./calendar/function.js";
-// import { ipcRenderer } from "electron";
-
 const { ipcRenderer } = require('electron');
 
 export default async function calendar() {
+    // Init
     const currentDate: Date = new Date();
     let currentMonth: number = currentDate.getMonth();
     let currentYear: number = currentDate.getFullYear();
@@ -19,9 +18,11 @@ export default async function calendar() {
             const daysInMonth: number = new Date(year, month + 1, 0).getDate();
             const startingDay: number = firstDay.getDay();
 
+            
             // Calendar Title
             const calendarTitle = document.querySelector("#calendar-title");
             calendarTitle ? calendarTitle.textContent = monthName(month) + " " + year.toString() : '';
+
 
             // Buttons
             const calendarNavigationButtons = document.querySelector("#calendar-navigation-buttons");
@@ -36,9 +37,6 @@ export default async function calendar() {
             nextButton.id = "nextMonth";
             nextButton.innerHTML = "&#10095;";
             calendarNavigationButtons && calendarNavigationButtons.append(nextButton);
-
-
-
 
 
             // Create Calendar Table

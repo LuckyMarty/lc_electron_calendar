@@ -5,7 +5,7 @@ import { IEvent } from "../../interface/eventInterface";
 // Connect to DB
 const sql = createConnection(connection);
 
-
+// Get All Data
 export function eventGetAll(): Promise<IEvent[]> {
     return new Promise((resolve, rej) => {
         sql.query('SELECT * FROM event',
@@ -16,6 +16,7 @@ export function eventGetAll(): Promise<IEvent[]> {
     })
 }
 
+// Add Event
 export function eventAdd(event: IEvent) {
     return new Promise((resolve, rej) => {
         sql.query('INSERT INTO `event` (`id`, `date_deb`, `date_fin`, `titre`, `location`, `categorie`, `statut`, `description`, `transparence`, `nbMaj`) VALUES ( NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?)',

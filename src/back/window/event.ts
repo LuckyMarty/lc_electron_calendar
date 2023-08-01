@@ -1,7 +1,12 @@
 import { BrowserWindow } from "electron"
 import * as path from "path";
 
+
+// ************************
+// ADD EVENT WINDOW
+// ************************
 export function windowEventAdd(parent: BrowserWindow) {
+    // Create window
     const window = new BrowserWindow({
         modal: true,
         parent,
@@ -13,16 +18,14 @@ export function windowEventAdd(parent: BrowserWindow) {
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,
-            // preload: path.join(__dirname, "../front/preload.js"),
         },
     })
 
+    // Hide Menu Bar
     window.setMenuBarVisibility(false)
 
-    // and load the index.html of the app.
+    // Load content
     window.loadFile('./pages/event/add.html')
-    // mainWindow.loadURL('https://github.com')
-
 
     // Open the DevTools.
     window.webContents.openDevTools()

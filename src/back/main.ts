@@ -3,6 +3,9 @@ import * as path from "path";
 import EventEvent from "./event/EventEvent";
 import { windowEventAdd } from "./window/event";
 
+// ************************
+// MAIN WINDOW
+// ************************
 function createWindow() {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
@@ -24,8 +27,19 @@ function createWindow() {
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
 
-
+  // Custom Menu Bar
   const menuTpl: any = [
+    {
+      label: "General",
+      type: "submenu",
+      submenu: [
+        {
+          label: 'Exit',
+          type: 'normal',
+          role: 'quit'
+        }
+      ]
+    },
     {
       label: "Event",
       type: "submenu",
@@ -34,26 +48,19 @@ function createWindow() {
           label: 'Add',
           type: 'normal',
           click: () => {
-            // console.log('click sur menu');
             windowEventAdd(mainWindow);
           }
         },
         {
           type: 'separator'
-        },
-        {
-          label: 'Exit',
-          type: 'normal',
-          role: 'quit'
         }
       ]
     }
-  ]
+  ];
+  
   const menu = Menu.buildFromTemplate(menuTpl);
-
-  mainWindow.setMenu(menu)
-
-  Menu.setApplicationMenu(menu)
+  mainWindow.setMenu(menu);
+  Menu.setApplicationMenu(menu);
 }
 
 // This method will be called when Electron has finished
