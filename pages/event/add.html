@@ -1,27 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../src/assets/library/daterangepicker/daterangepicker.css">
+
+    <!-- JS -->
+    <script src="../../dist/front/pages/eventAdd.js" type="module" defer></script>
+    <!-- Date Range Picker -->
+    <script type="text/javascript" src="../../src/assets/library/daterangepicker/jquery.min.js"
+        onload="window.$ = window.jQuery = module.exports;"></script>
+    <script type="text/javascript" src="../../src/assets/library/daterangepicker/moment.min.js"></script>
+    <script type="text/javascript" src="../../src/assets/library/daterangepicker/daterangepicker.js"></script>
 </head>
+
 <body>
 
     <h1>Add Event</h1>
 
     <form id="addEventForm">
         <div>
-            <label for="add_event_date_from">From</label>
-            <input type="date" name="add_event_date_from" id="add_event_date_from">
-        </div>
-
-        <div>
-            <label for="add_event_date_to">To</label>
-            <input type="date" name="add_event_date_to" id="add_event_date_to">
+            <label for="add_event_date">Date and Time</label>
+            <input type="text" name="add_event_date" id="add_event_date" required>
         </div>
 
         <div>
             <label for="add_event_title">Title</label>
-            <input type="text" name="add_event_title" id="add_event_title">
+            <input type="text" name="add_event_title" id="add_event_title" required>
         </div>
 
         <div>
@@ -51,8 +59,55 @@
 
         <input type="submit" value="Add">
     </form>
-    
-    <script src="../../dist/front/pages/eventAdd.js" type="module" defer></script>
-    <!-- <script src="../../dist/front/renderer.js" type="module" defer></script> -->
+
+
+    <script>
+        $(function () {
+            $('input[name="add_event_date"]').daterangepicker({
+                timePicker: true,
+                startDate: moment().startOf('hour'),
+                endDate: moment().startOf('hour').add(32, 'hour'),
+                // locale: {
+                //     format: 'M/DD hh:mm A'
+                // },
+                timePicker24Hour: true,
+                locale: {
+                    "format": "DD/MM/YYYY hh:mm",
+                    "separator": " - ",
+                    "applyLabel": "Appliquer",
+                    "cancelLabel": "Annuler",
+                    "fromLabel": "De",
+                    "toLabel": "à",
+                    "customRangeLabel": "Custom",
+                    "weekLabel": "W",
+                    "daysOfWeek": [
+                        "Di",
+                        "Lu",
+                        "Ma",
+                        "Me",
+                        "Je",
+                        "Ve",
+                        "Sa"
+                    ],
+                    "monthNames": [
+                        "Janvier",
+                        "Février",
+                        "Mars",
+                        "Avril",
+                        "Mai",
+                        "Juin",
+                        "Juillet",
+                        "Août",
+                        "Septembre",
+                        "Octobre",
+                        "Novembre",
+                        "Décembre"
+                    ],
+                    "firstDay": 1
+                },
+            });
+        });
+    </script>
 </body>
+
 </html>
