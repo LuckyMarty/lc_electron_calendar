@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Change Document & H1 Title
         document.title = data.titre;
-        if(document.querySelector('h1')) (document.querySelector('h1') as HTMLHeadElement).innerText = data.titre;
+        if (document.querySelector('h1')) (document.querySelector('h1') as HTMLHeadElement).innerText = data.titre;
 
         // Display Data in their Input
         setStringValue('#add_event_date', rangeDate(data.date_deb, data.date_fin))
@@ -55,6 +55,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Send Data
                 eventUpdate(updateEvent);
 
+                // Make the Form Read Only
+                editable(false);
+
                 // Refresh Main Window
                 refreshMainWindow();
             })
@@ -65,8 +68,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Handle Edit
         document.querySelector("#edit")?.addEventListener('click', (e) => {
-            (document.querySelector("#edit svg g") as HTMLElement).style.fill = "green";
             editable(true);
+        })
+
+        // Handle Cancel
+        document.querySelector(".cancel")?.addEventListener('click', (e) => {
+            location.reload();
         })
 
         // Handle Delete
@@ -88,6 +95,12 @@ document.addEventListener('DOMContentLoaded', () => {
 // Make the form editable
 function editable(status: boolean) {
     if (!status) {
+        // Change the icon color
+        (document.querySelector("#edit svg g") as HTMLElement).style.fill = "black";
+
+        // Remove Date Range Picker
+        document.querySelector(".daterangepicker")?.remove();
+
         // Add class
         let form = document.querySelector("#addEventForm");
         let classUneditable = "viewEvent";
@@ -105,6 +118,9 @@ function editable(status: boolean) {
             input.readOnly = true;
         })
     } else {
+        // Change the icon color
+        (document.querySelector("#edit svg g") as HTMLElement).style.fill = "green";
+
         // Remove Class
         document.querySelector("#addEventForm")?.classList.remove('viewEvent');
 

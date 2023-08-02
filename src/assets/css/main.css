@@ -49,6 +49,7 @@ body {
   grid-template-columns: 1fr 100px;
 }
 #calendar-header > div:first-child > div button {
+  cursor: pointer;
   height: 100%;
   width: 50%;
   border: none;
@@ -59,6 +60,7 @@ body {
   justify-self: end;
 }
 #calendar-header > div:last-child > button {
+  cursor: pointer;
   padding: 16px 32px;
   border: none;
   background-color: #000;
@@ -122,7 +124,7 @@ body {
 }
 #calendar table tbody tr td:hover {
   transition: all 0.2;
-  background-color: #fff;
+  background-color: #f0efeb;
 }
 #calendar table tbody tr td .event {
   cursor: pointer;
@@ -154,27 +156,48 @@ body {
   display: flex;
   width: 100%;
   margin-bottom: 25px;
+  align-items: center;
 }
 #addEventForm > div label {
   width: 25%;
 }
+#addEventForm > div label[for=add_event_description] {
+  align-self: start;
+}
 #addEventForm > div input,
-#addEventForm > div textarea {
+#addEventForm > div textarea,
+#addEventForm > div select {
   width: 75%;
   padding: 14px;
+}
+#addEventForm > div input[type=range] {
+  padding: 14px 0;
 }
 #addEventForm .required label:after {
   color: #e32;
   content: " *";
   display: inline;
 }
-#addEventForm input[type=submit] {
-  float: right;
+#addEventForm .form-buttons {
+  display: flex;
+  justify-content: end;
+  gap: 25px;
+}
+#addEventForm .form-buttons input.cancel,
+#addEventForm .form-buttons input[type=submit] {
   width: 200px;
   border: none;
   padding: 14px;
-  background-color: #000;
   font-size: large;
+  text-align: center;
+}
+#addEventForm .form-buttons input.cancel {
+  background-color: #f0efeb;
+  color: #000;
+  font-weight: bold;
+}
+#addEventForm .form-buttons input[type=submit] {
+  background-color: #000;
   color: #fff;
 }
 
@@ -188,6 +211,11 @@ body {
   display: flex;
   gap: 25px;
 }
+.viewEvent select,
+.viewEvent input[type=range] {
+  pointer-events: none;
+}
+.viewEvent input.cancel,
 .viewEvent input[type=submit] {
   display: none;
 }
