@@ -1,5 +1,5 @@
 import { IEvent } from "../interface/eventInterface.js";
-import { addEvent } from "./calendar/function.js";
+import { dateCheck, displayEvent, getDateToString, getTimeToString, sameDate } from "./calendar/function.js";
 const { ipcRenderer } = require('electron');
 
 export default async function calendar() {
@@ -18,7 +18,7 @@ export default async function calendar() {
             const daysInMonth: number = new Date(year, month + 1, 0).getDate();
             const startingDay: number = firstDay.getDay();
 
-            
+
             // Calendar Title
             const calendarTitle = document.querySelector("#calendar-title");
             calendarTitle ? calendarTitle.textContent = monthName(month) + " " + year.toString() : '';
@@ -101,7 +101,6 @@ export default async function calendar() {
                             today.getDate() === date
                         ) {
                             cell.classList.add('today');
-                            cell.append(addEvent('Event Title', '1:00 - 1:20 PM'));
                         }
 
                         // Display Weekend
@@ -109,30 +108,7 @@ export default async function calendar() {
                             cell.classList.add('weekEnd');
                         }
 
-                        const result = await ipcRenderer.invoke('bdd-event-get-all') as IEvent[];
-                        let events: Array<IEvent> = [];
-                        if (result) {
-                            result.forEach(element => {
-                                // console.log(element.date_deb.getDate(), date);
-                                // console.log(element.date_deb.getMonth(), currentMonth);
-                                // console.log(element.date_deb.getFullYear(), currentYear);
-
-                                if (element.date_deb.getDate() === date && element.date_deb.getMonth() === currentMonth && element.date_deb.getFullYear() === currentYear) {
-                                    events.push(element);
-                                }
-                            });
-                        }
-
-                        if (events) {
-                            events.forEach(event => {
-                                cell.append(addEvent(event.titre, event.description));
-                            });
-                        }
-
-
-                        // if (events) {
-                        //     cell.append(events)
-                        // }
+                        await displayEvents(cell, currentMonth, date, currentYear);
 
                         date++;
                     }
@@ -182,25 +158,31 @@ export default async function calendar() {
 
 
     // Functions
-    async function displayEvent(): Promise<IEvent[]> {
-        return await ipcRenderer.invoke('bdd-event-get-all');
+    async function displayEvents(cell: HTMLElement, currentMonth: number, date: number, currentYear: number) {
+        const result = await ipcRenderer.invoke('bdd-event-get-all') as IEvent[];
+        let events: Array<IEvent> = [];
+        if (result) {
+            result.forEach(element => {
+                if (dateCheck(new Date(element.date_deb).toLocaleDateString(), new Date(element.date_fin).toLocaleDateString(), new Date(`${currentMonth + 1}/${date}/${currentYear}`).toLocaleDateString())) {
+                    events.push(element);
+                }
+            });
+        }
 
-        // let result: Array<IEvent> = await ipcRenderer.invoke('bdd-event-get-all');
-        // console.log(result);
-
-        // let events: Array<IEvent> = [];
-        // if (result?.length !== 0) {
-        //     result.forEach(element => {
-        //         if (element.date_deb.getDay() === day && element.date_deb.getMonth() === month && element.date_deb.getFullYear() === year) {
-        //             events.push(element);
-        //         }
-        //     });
-        // }
-
-        // if (events.length !== 0) {
-        //     events.forEach(event => {
-        //         addEvent(eventtitre, event.description);
-        //     });
-        // }
+        if (events) {
+            events.forEach(event => {
+                if (event.id) {
+                    if (sameDate(getDateToString(event.date_deb), getDateToString(event.date_fin))) {
+                        let from = `${getTimeToString(event.date_deb)}`;
+                        let to = `${getTimeToString(event.date_fin)}`;
+                        cell.append(displayEvent(event.id, event.titre, `${from} - ${to}`));
+                    } else {
+                        let from = `Du ${getDateToString(event.date_deb)} à ${getTimeToString(event.date_deb)}`;
+                        let to = `Au ${getDateToString(event.date_fin)} à ${getTimeToString(event.date_fin)}`;
+                        cell.append(displayEvent(event.id, event.titre, `${from} <br> ${to}`));
+                    }
+                }
+            });
+        }
     }
 }

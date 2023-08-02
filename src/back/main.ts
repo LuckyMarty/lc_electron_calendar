@@ -1,7 +1,7 @@
 import { app, BrowserWindow, Menu } from "electron";
 import * as path from "path";
 import EventEvent from "./event/EventEvent";
-import { windowEventAdd } from "./window/event";
+import { windowEventAdd } from "./window/addEventWindow";
 
 // ************************
 // MAIN WINDOW
@@ -13,7 +13,6 @@ function createWindow() {
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
-      preload: path.join(__dirname, "../front/preload.js"),
     },
   });
 
@@ -22,7 +21,7 @@ function createWindow() {
   mainWindow.maximize()
 
   // and load the index.html of the app.
-  mainWindow.loadFile(path.join("./pages/index.html"));
+  mainWindow.loadFile(path.join("./pages/main.html"));
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools();

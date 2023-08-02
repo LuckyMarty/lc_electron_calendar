@@ -121,6 +121,8 @@ body {
                     }
 
                     .event {
+                        cursor: pointer;
+
                         &-title {
                             font-family: $font-1-medium;
                         }

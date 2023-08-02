@@ -13,3 +13,7 @@ export const getValueAsString = (element: string): string => {
 export const getValueAsNumber = (element:string):number => {
     return parseFloat((document.querySelector(element) as HTMLInputElement).value);
 }
+
+export const emptyValue = (element:string) => {
+    (document.querySelector(element) as HTMLInputElement).value = "";
+}

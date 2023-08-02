@@ -2,6 +2,12 @@
 
 ## Before launch
 
+Install all dependency
+
+```bash
+  npm install
+```
+
 Generate Back-End files
 
 ```bash
