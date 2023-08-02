@@ -117,11 +117,19 @@ body {
 
                     &:hover {
                         transition: all .2;
-                        background-color: $gray;
+                        background-color: $white;
                     }
 
                     .event {
                         cursor: pointer;
+                        transition: all .2s;
+
+                        &:hover {
+                            border-left: 2px solid $black;
+                            padding-left: 8px;
+                            margin-left: -8px;
+                            transition: all .2s;
+                        }
 
                         &-title {
                             font-family: $font-1-medium;
