@@ -1,6 +1,6 @@
 # Calendar with Electron
 
-## What you can do?
+## What can you do?
 - Add Event
 - Update Event
 - Delete Event
