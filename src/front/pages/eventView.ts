@@ -9,6 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const result = await ipcRenderer.invoke('bdd-event-get-by-id', id);
         const data: IEvent = result[0];
 
+        // Change Document & H1 Title
+        document.title = data.titre;
+        if(document.querySelector('h1')) (document.querySelector('h1') as HTMLHeadElement).innerText = data.titre;
+
         // Display Data in their Input
         setStringValue('#add_event_date', rangeDate(data.date_deb, data.date_fin))
         setStringValue('#add_event_title', data.titre)
