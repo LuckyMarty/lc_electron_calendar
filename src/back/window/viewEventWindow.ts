@@ -13,7 +13,7 @@ export function windowEventView(parent: BrowserWindow, eventId: Number) {
         modal: true,
         parent,
         width: 800,
-        height: 600,
+        height: 900,
         title: "Event",
 
         icon: path.join(__dirname, "../../../src/assets/img/icon.png"),

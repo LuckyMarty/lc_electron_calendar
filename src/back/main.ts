@@ -10,6 +10,7 @@ import { DevTools } from "./utils";
 function createWindow() {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
+    title: "Lucky Marty - Electron Calendar",
     icon: path.join(__dirname, "../../src/assets/img/icon.png"),
     webPreferences: {
       nodeIntegration: true,
@@ -34,6 +35,16 @@ function createWindow() {
       type: "submenu",
       submenu: [
         {
+          label: 'Refresh',
+          type: 'normal',
+          click: () => {
+            mainWindow.reload();
+          }
+        },
+        {
+          type: 'separator'
+        },
+        {
           label: 'Exit',
           type: 'normal',
           role: 'quit'
@@ -50,14 +61,11 @@ function createWindow() {
           click: () => {
             windowEventAdd(mainWindow);
           }
-        },
-        {
-          type: 'separator'
         }
       ]
     }
   ];
-  
+
   const menu = Menu.buildFromTemplate(menuTpl);
   mainWindow.setMenu(menu);
   Menu.setApplicationMenu(menu);
