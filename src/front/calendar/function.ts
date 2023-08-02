@@ -1,6 +1,8 @@
 const { ipcRenderer } = require('electron');
 
-export function displayEvent(id: number, title: string, content: string): HTMLDivElement {
+
+// Display Event Card
+export const displayEvent = (id: number, title: string, content: string): HTMLDivElement => {
     // Events
     const event = document.createElement('div');
     const eventTitle = document.createElement('div');
@@ -19,15 +21,14 @@ export function displayEvent(id: number, title: string, content: string): HTMLDi
 
     return event;
 }
-
-
 // Pass Event Id to ViewEventWindow
-function viewEvent(eventId: Number) {
+const viewEvent = (eventId: Number) => {
     ipcRenderer.send('view-event', eventId);
 }
 
 
-export function dateCheck(from: string, to: string, check: string): boolean {
+// Check if date is in range
+export const dateCheck = (from: string, to: string, check: string): boolean => {
     let fDate, lDate, cDate;
     fDate = Date.parse(from);
     lDate = Date.parse(to);
@@ -39,7 +40,8 @@ export function dateCheck(from: string, to: string, check: string): boolean {
     return false;
 }
 
-export function sameDate(from: string, to: string): boolean {
+// Check if From and To Date are the same
+export const sameDate = (from: string, to: string): boolean => {
     let fDate, lDate;
     fDate = Date.parse(from);
     lDate = Date.parse(to);
@@ -50,10 +52,12 @@ export function sameDate(from: string, to: string): boolean {
     return false;
 }
 
-export function getDateToString(date: Date) {
+// Convert Date to String, FR Format
+export const getDateToString = (date: Date): string => {
     return date.toLocaleDateString('fr-FR');
 }
 
-export function getTimeToString(date: Date) {
+// Convert Time to String, 24h Format
+export const getTimeToString = (date: Date): string => {
     return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false });
 }

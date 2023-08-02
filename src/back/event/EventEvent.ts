@@ -28,10 +28,11 @@ export default (parent: BrowserWindow) => {
         return await eventUpdate(params)
     });
 
-    // Update data
+    // Delete data
     ipcMain.handle('bdd-event-delete', async (e, id: number) => {
         return await eventDelete(id)
     });
+    
 
     // ************************
     // WINDOWS
@@ -46,6 +47,10 @@ export default (parent: BrowserWindow) => {
         windowEventView(parent, eventId);
     })
 
+
+    // ************************
+    // ACTIONS
+    // ************************
     // Close Current Window (for every child)
     ipcMain.on('close-current-window', (event) => {
         const currentWindow = BrowserWindow.fromWebContents(event.sender);
@@ -57,5 +62,5 @@ export default (parent: BrowserWindow) => {
     // Refresh Main Window
     ipcMain.on('refresh-main-window', () => {
         parent.reload();
-      });
+    });
 }

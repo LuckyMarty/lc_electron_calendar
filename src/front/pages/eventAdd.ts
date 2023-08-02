@@ -50,6 +50,7 @@ if (addEventForm) {
         closeCurrentWindow();
     })
 
+    // Functions
     async function eventAdd(newEvent: IEvent) {
         await ipcRenderer.invoke('bdd-event-add', newEvent)
     }

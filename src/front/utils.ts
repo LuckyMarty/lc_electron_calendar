@@ -1,3 +1,6 @@
+// ************************
+// INPUTS
+// ************************
 export const getInput = (element: string): HTMLInputElement => {
     return document.querySelector(element) as HTMLInputElement;
 }
@@ -23,10 +26,9 @@ export const setStringValue = (element: string, content: string) => {
 }
 
 
-
-
-
-
+// ************************
+// DATE
+// ************************
 export const rangeDate = (from: Date, to: Date): string => {
     return `${formatDateToFR(from)} ${formatTime12to24(from)} - ${formatDateToFR(to)} ${formatTime12to24(to)}`
 }
