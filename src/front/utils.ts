@@ -17,3 +17,7 @@ export const getValueAsNumber = (element:string):number => {
 export const emptyValue = (element:string) => {
     (document.querySelector(element) as HTMLInputElement).value = "";
 }
+
+export const setStringValue = (element: string, content: string) => {
+    (document.querySelector(element) as HTMLInputElement).value = content;
+}

@@ -171,6 +171,10 @@ body {
   color: #fff;
 }
 
+.viewEvent input[type=submit] {
+  display: none;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;

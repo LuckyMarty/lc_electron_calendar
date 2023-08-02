@@ -27,9 +27,9 @@ export function windowEventView(parent: BrowserWindow, eventId: Number) {
     // Load content
     window.loadFile('./pages/event/view.html')
 
-    // Open the DevTools.
-    window.webContents.openDevTools();
-
     // Pass Event Id to ViewEventWindow
     window.webContents.send('event-id', eventId);
+
+    // Open the DevTools.
+    window.webContents.openDevTools();
 }

@@ -13,8 +13,8 @@ if (addEventForm) {
         const dates = getValueAsString("#add_event_date");
         const titre = getValueAsString("#add_event_title");
         const location = getValueAsString("#add_event_location");
-        const category = getValueAsString("#add_event_category");
-        const status = getValueAsString("#add_event_status");
+        const categorie = getValueAsString("#add_event_category");
+        const statut = getValueAsString("#add_event_status");
         const description = getValueAsString("#add_event_description");
         const transparence = getValueAsString("#add_event_transparence");
 
@@ -27,8 +27,8 @@ if (addEventForm) {
             date_fin: splitDate(dates)[1],
             titre,
             location,
-            category,
-            status,
+            categorie,
+            statut,
             description,
             transparence,
             nbOfUpdate: 0
