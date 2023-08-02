@@ -1,6 +1,5 @@
 import { BrowserWindow, ipcMain } from "electron"
-import * as path from "path";
-import { eventAdd, eventGetAll, eventGetById } from "../model/EventModel"
+import { eventAdd, eventGetAll, eventGetById, eventUpdate } from "../model/EventModel"
 import { IEvent } from "../../interface/eventInterface";
 import { windowEventAdd } from "../window/addEventWindow";
 import { windowEventView } from "../window/viewEventWindow";
@@ -24,6 +23,11 @@ export default (parent: BrowserWindow) => {
         return await eventAdd(params)
     });
 
+    // Update data
+    ipcMain.handle('bdd-event-update', async (e, params: IEvent) => {
+        return await eventUpdate(params)
+    });
+
     // ************************
     // WINDOWS
     // ************************
@@ -31,9 +35,22 @@ export default (parent: BrowserWindow) => {
     ipcMain.handle('add-event', () => {
         windowEventAdd(parent);
     })
-    
+
     // View Event
     ipcMain.on('view-event', (event, eventId) => {
         windowEventView(parent, eventId);
     })
+
+    ipcMain.on('close-current-window', (event) => {
+        const currentWindow = BrowserWindow.fromWebContents(event.sender);
+        if (currentWindow) {
+            currentWindow.close();
+        }
+    });
+
+
+    // Refresh Main Window
+    ipcMain.on('refresh-main-window', () => {
+        parent.reload();
+      });
 }

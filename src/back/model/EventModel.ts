@@ -38,3 +38,15 @@ export function eventAdd(event: IEvent) {
         })
     })
 }
+
+// Update Event
+export function eventUpdate(event: IEvent) {
+    return new Promise((resolve, rej) => {
+        sql.query('UPDATE `event` SET `date_deb` = ?, `date_fin` = ?, `titre` = ?, `location` = ?, `categorie` = ?, `statut` = ?, `description` = ?, `transparence` = ?, `nbMaj` = ? WHERE id = ?',
+        [event.date_deb, event.date_fin, event.titre, event.location, event.categorie, event.statut, event.description, event.transparence, event.nbOfUpdate + 1, event.id],
+        (err: Error) => {
+            if (err) rej(err);
+            else resolve("Event updated");
+        })
+    })
+}

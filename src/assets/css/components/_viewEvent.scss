@@ -18,4 +18,8 @@
     .required label:after {
         content: "" !important;
     }
+
+    .daterangepicker {
+        display: none!important;
+    }
 }

@@ -187,6 +187,9 @@ body {
 .viewEvent .required label:after {
   content: "" !important;
 }
+.viewEvent .daterangepicker {
+  display: none !important;
+}
 
 * {
   box-sizing: border-box;

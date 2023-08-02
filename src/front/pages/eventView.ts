@@ -1,14 +1,15 @@
-import { IEvent } from "../../interface/eventInterface.js";
-
 const { ipcRenderer } = require('electron');
+import { IEvent } from "../../interface/eventInterface.js";
+import { getValueAsString, rangeDate, setStringValue, splitDate } from "../utils.js";
+
 
 document.addEventListener('DOMContentLoaded', () => {
-    ipcRenderer.on('event-id', async (event: any, id: Number) => {
-        console.log(id);
+    ipcRenderer.on('event-id', async (event: any, id: number) => {
+        // Get Data By Id
         const result = await ipcRenderer.invoke('bdd-event-get-by-id', id);
-        console.log(result[0]);
         const data: IEvent = result[0];
 
+        // Display Data in their Input
         setStringValue('#add_event_date', rangeDate(data.date_deb, data.date_fin))
         setStringValue('#add_event_title', data.titre)
         setStringValue('#add_event_location', data.location)
@@ -16,30 +17,63 @@ document.addEventListener('DOMContentLoaded', () => {
         setStringValue('#add_event_status', data.statut)
         setStringValue('#add_event_description', data.description)
         setStringValue('#add_event_transparence', data.transparence)
+
+        // Update Form Submit
+        const addEventForm = document.querySelector('#addEventForm');
+        if (addEventForm) {
+            addEventForm.addEventListener('submit', (e: Event) => {
+                // Get Inputs
+                const dates = getValueAsString("#add_event_date");
+                const titre = getValueAsString("#add_event_title");
+                const location = getValueAsString("#add_event_location");
+                const categorie = getValueAsString("#add_event_category");
+                const statut = getValueAsString("#add_event_status");
+                const description = getValueAsString("#add_event_description");
+                const transparence = getValueAsString("#add_event_transparence");
+
+                // Avoid reload
+                e.preventDefault();
+
+                // Prepare Data
+                const updateEvent: IEvent = {
+                    id,
+                    date_deb: splitDate(dates)[0],
+                    date_fin: splitDate(dates)[1],
+                    titre,
+                    location,
+                    categorie,
+                    statut,
+                    description,
+                    transparence,
+                    nbOfUpdate: 0
+                }
+
+                // Send Data
+                eventUpdate(updateEvent);
+
+                // Refresh Main Window
+                refreshMainWindow();
+            })
+        }
     });
 })
 
+
+// Make the Form Read Only
 editable(false);
 
-
 // Handle Edit
-document.querySelector("#edit")?.addEventListener('click', () => {
-    let proceed = confirm("Are you sure you want to edit?");
-    if (proceed) {
-        editable(true);
-    } else {
-        editable(false);
-    }
+document.querySelector("#edit")?.addEventListener('click', (e) => {
+    (document.querySelector("#edit svg g") as HTMLElement).style.fill = "green";
+    editable(true);
 })
-
 
 // Handle Delete
 document.querySelector("#delete")?.addEventListener('click', () => {
     let proceed = confirm("Are you sure you want to delete?");
     if (proceed) {
-        editable(true);
-    } else {
-        editable(false);
+        // editable(true);
+        closeCurrentWindow();
     }
 })
 
@@ -49,6 +83,7 @@ document.querySelector("#delete")?.addEventListener('click', () => {
 // ************************
 // FUNCTIONS
 // ************************
+// Make the form editable
 function editable(status: boolean) {
     if (!status) {
         // Add class
@@ -82,22 +117,17 @@ function editable(status: boolean) {
     }
 }
 
-function setStringValue(element: string, content: string) {
-    (document.querySelector(element) as HTMLInputElement).value = content;
+// Update Data Base
+async function eventUpdate(updateEvent: IEvent) {
+    await ipcRenderer.invoke('bdd-event-update', updateEvent)
 }
 
-function rangeDate(from: Date, to: Date): string {
-    return `${formatDateToFR(from)} ${formatTime12to24(from)} - ${formatDateToFR(to)} ${formatTime12to24(to)}`
+// Close Current Window
+function closeCurrentWindow() {
+    ipcRenderer.send('close-current-window');
 }
 
-function formatTime12to24(time: Date): string {
-    return `${time.getHours().toString().padStart(2, '0')}:${time.getMinutes().toString().padStart(2, '0')}`;
-}
-
-function formatDateToFR(date: Date): string {
-    return date.toLocaleDateString('fr-FR', {
-        year: 'numeric',
-        month: '2-digit',
-        day: '2-digit',
-    });
+// Refresh Main Window
+function refreshMainWindow() {
+    ipcRenderer.send('refresh-main-window');
 }
