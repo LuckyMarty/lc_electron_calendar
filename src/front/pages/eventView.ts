@@ -55,29 +55,27 @@ document.addEventListener('DOMContentLoaded', () => {
                 refreshMainWindow();
             })
         }
+
+        // Make the Form Read Only
+        editable(false);
+
+        // Handle Edit
+        document.querySelector("#edit")?.addEventListener('click', (e) => {
+            (document.querySelector("#edit svg g") as HTMLElement).style.fill = "green";
+            editable(true);
+        })
+
+        // Handle Delete
+        document.querySelector("#delete")?.addEventListener('click', () => {
+            let proceed = confirm("Are you sure you want to delete?");
+            if (proceed) {
+                eventDelete(id);
+                refreshMainWindow();
+                closeCurrentWindow();
+            }
+        })
     });
 })
-
-
-// Make the Form Read Only
-editable(false);
-
-// Handle Edit
-document.querySelector("#edit")?.addEventListener('click', (e) => {
-    (document.querySelector("#edit svg g") as HTMLElement).style.fill = "green";
-    editable(true);
-})
-
-// Handle Delete
-document.querySelector("#delete")?.addEventListener('click', () => {
-    let proceed = confirm("Are you sure you want to delete?");
-    if (proceed) {
-        // editable(true);
-        closeCurrentWindow();
-    }
-})
-
-
 
 
 // ************************
@@ -120,6 +118,11 @@ function editable(status: boolean) {
 // Update Data Base
 async function eventUpdate(updateEvent: IEvent) {
     await ipcRenderer.invoke('bdd-event-update', updateEvent)
+}
+
+// Delete Data Base
+async function eventDelete(id: number) {
+    await ipcRenderer.invoke('bdd-event-delete', id)
 }
 
 // Close Current Window
