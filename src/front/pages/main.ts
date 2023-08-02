@@ -7,14 +7,14 @@
 
 
 const { ipcRenderer } = require('electron');
-import calendar from "../calendar.js";
+import calendar from "../calendar/calendar.js";
 
 
 // Display Calendar
 calendar();
 
 
-// Add Event Button
+// Handle Add Event Button
 const addEventButton = document?.querySelector("#calendar-addEvent");
 addEventButton?.addEventListener('click', () => {
     ipcRenderer.invoke('add-event');

@@ -6,13 +6,14 @@ import * as path from "path";
 // ADD EVENT WINDOW
 // ************************
 export function windowEventView(parent: BrowserWindow, eventId: Number) {
+    let window: BrowserWindow | null;
     // Create window
-    const window = new BrowserWindow({
+    window = new BrowserWindow({
         modal: true,
         parent,
         width: 800,
         height: 600,
-        title: "Add New Event",
+        title: "Event",
 
         icon: path.join(__dirname, "../../../src/assets/img/icon.png"),
         webPreferences: {
@@ -25,11 +26,13 @@ export function windowEventView(parent: BrowserWindow, eventId: Number) {
     window.setMenuBarVisibility(false)
 
     // Load content
-    window.loadFile('./pages/event/view.html')
+    window.loadFile('./pages/event/view.html');
+
+    // Pass Event Id to ViewEventWindow
+    window.webContents.on('did-finish-load', () => {
+        window?.webContents.send('event-id', eventId);
+    });
 
     // Open the DevTools.
     window.webContents.openDevTools();
-
-    // Pass Event Id to ViewEventWindow
-    window.webContents.send('event-id', eventId);
 }

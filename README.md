@@ -1,20 +1,25 @@
 # Calendar with Electron
 
+## What you can do?
+- Add Event
+- Update Event
+- Delete Event
+
 ## Before launch
 
-Install all dependency
+1. Install all dependency
 
 ```bash
   npm install
 ```
 
-Generate Back-End files
+2. Generate Back-End files
 
 ```bash
   npm run build:back
 ```
 
-Generate Front-End files
+3. Generate Front-End files
 
 ```bash
   npm run build:front

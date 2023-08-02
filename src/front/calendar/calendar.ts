@@ -1,5 +1,5 @@
-import { IEvent } from "../interface/eventInterface.js";
-import { dateCheck, displayEvent, getDateToString, getTimeToString, sameDate } from "./calendar/function.js";
+import { IEvent } from "../../interface/eventInterface.js";
+import { dateCheck, displayEvent, getDateToString, getTimeToString, sameDate } from "./function.js";
 const { ipcRenderer } = require('electron');
 
 export default async function calendar() {
