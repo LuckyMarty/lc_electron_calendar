@@ -2,6 +2,7 @@ import { app, BrowserWindow, Menu } from "electron";
 import * as path from "path";
 import EventEvent from "./event/EventEvent";
 import { windowEventAdd } from "./window/addEventWindow";
+import { DevTools } from "./utils";
 
 // ************************
 // MAIN WINDOW
@@ -24,7 +25,7 @@ function createWindow() {
   mainWindow.loadFile(path.join("./pages/main.html"));
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools();
+  if (DevTools) mainWindow.webContents.openDevTools();
 
   // Custom Menu Bar
   const menuTpl: any = [
