@@ -1,5 +1,21 @@
 .viewEvent {
+    &-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 50px;
+
+        >div {
+            display: flex;
+            gap: 25px;
+        }
+    }
+
     input[type=submit] {
         display: none;
+    }
+
+    .required label:after {
+        content: "" !important;
     }
 }

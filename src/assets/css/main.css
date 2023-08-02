@@ -171,8 +171,21 @@ body {
   color: #fff;
 }
 
+.viewEvent-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+}
+.viewEvent-header > div {
+  display: flex;
+  gap: 25px;
+}
 .viewEvent input[type=submit] {
   display: none;
+}
+.viewEvent .required label:after {
+  content: "" !important;
 }
 
 * {

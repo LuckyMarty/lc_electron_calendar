@@ -19,11 +19,39 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 })
 
-editable(true);
+editable(false);
 
 
+// Handle Edit
+document.querySelector("#edit")?.addEventListener('click', () => {
+    let proceed = confirm("Are you sure you want to edit?");
+    if (proceed) {
+        editable(true);
+    } else {
+        editable(false);
+    }
+})
+
+
+// Handle Delete
+document.querySelector("#delete")?.addEventListener('click', () => {
+    let proceed = confirm("Are you sure you want to delete?");
+    if (proceed) {
+        editable(true);
+    } else {
+        editable(false);
+    }
+})
+
+
+
+
+// ************************
+// FUNCTIONS
+// ************************
 function editable(status: boolean) {
-    if (status) {
+    if (!status) {
+        // Add class
         let form = document.querySelector("#addEventForm");
         let classUneditable = "viewEvent";
         // Add the class only if it doesn't exist
@@ -31,19 +59,28 @@ function editable(status: boolean) {
             form.classList.add(classUneditable);
         }
 
+        // Make every input read only
         document.querySelectorAll('input').forEach(input => {
             if (input.name === 'add_event_date') input.name = 'add_event_date_readonly';
             input.readOnly = true;
         })
+        document.querySelectorAll('textarea').forEach(input => {
+            input.readOnly = true;
+        })
     } else {
-        document.querySelector("#addEventForm")?.classList.remove();
+        // Remove Class
+        document.querySelector("#addEventForm")?.classList.remove('viewEvent');
+
+        // Make every input editable
         document.querySelectorAll('input').forEach(input => {
             if (input.name === 'add_event_date_readonly') input.name = 'add_event_date';
             input.readOnly = false;
         })
+        document.querySelectorAll('textarea').forEach(input => {
+            input.readOnly = false;
+        })
     }
 }
-
 
 function setStringValue(element: string, content: string) {
     (document.querySelector(element) as HTMLInputElement).value = content;
@@ -64,19 +101,3 @@ function formatDateToFR(date: Date): string {
         day: '2-digit',
     });
 }
-
-
-
-// let data = await eventData(eventId);
-// if (data) {
-//     console.log(data);
-
-//     setStringValue('#add_event_title', data.titre);
-// } else console.log("no data");
-
-
-
-// async function eventData(id: Number) {
-//     const result = await ipcRenderer.invoke('bdd-event-get-by-id', id);
-//     return result ? result : false;
-// }

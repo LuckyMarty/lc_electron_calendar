@@ -21,3 +21,24 @@ export const emptyValue = (element:string) => {
 export const setStringValue = (element: string, content: string) => {
     (document.querySelector(element) as HTMLInputElement).value = content;
 }
+
+
+
+
+
+
+export function rangeDate(from: Date, to: Date): string {
+    return `${formatDateToFR(from)} ${formatTime12to24(from)} - ${formatDateToFR(to)} ${formatTime12to24(to)}`
+}
+
+export function formatTime12to24(time: Date): string {
+    return `${time.getHours().toString().padStart(2, '0')}:${time.getMinutes().toString().padStart(2, '0')}`;
+}
+
+export function formatDateToFR(date: Date): string {
+    return date.toLocaleDateString('fr-FR', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+    });
+}
