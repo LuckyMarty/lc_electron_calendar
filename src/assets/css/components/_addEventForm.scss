@@ -6,15 +6,25 @@
         display: flex;
         width: 100%;
         margin-bottom: 25px;
+        align-items: center;
 
         label {
             width: 25%;
+
+            &[for=add_event_description] {
+                align-self: start;
+            }
         }
 
         input,
-        textarea {
+        textarea,
+        select {
             width: 75%;
             padding: 14px;
+        }
+
+        input[type=range] {
+            padding: 14px 0;
         }
     }
 
@@ -24,16 +34,31 @@
         display:inline;
     }
 
-    input[type=submit] {
-        float: right;
+    .form-buttons {
+        display: flex;
+        justify-content: end;
+        gap: 25px;
 
-        width: 200px;
-        border: none;
-        padding: 14px;
-        background-color: $black;
-        
-        font-size: large;
-        color: $white;
-    
+        input.cancel,
+        input[type=submit] {
+            width: 200px;
+            border: none;
+            padding: 14px;
+            
+            font-size: large;
+            text-align: center;
+        }
+
+        input.cancel {
+            background-color: $gray;
+            color: $black;
+            font-weight: bold;
+        }
+
+        input[type=submit] {
+            background-color: $black;
+            color: $white;
+        }
     }
+
 }

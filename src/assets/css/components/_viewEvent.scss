@@ -11,6 +11,12 @@
         }
     }
 
+    select,
+    input[type=range] {
+        pointer-events: none;
+    }
+
+    input.cancel,
     input[type=submit] {
         display: none;
     }
