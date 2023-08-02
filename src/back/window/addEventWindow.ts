@@ -1,5 +1,6 @@
 import { BrowserWindow } from "electron"
 import * as path from "path";
+import { DevTools } from "../utils";
 
 
 // ************************
@@ -28,5 +29,5 @@ export function windowEventAdd(parent: BrowserWindow) {
     window.loadFile('./pages/event/add.html')
 
     // Open the DevTools.
-    window.webContents.openDevTools()
+    if (DevTools) window.webContents.openDevTools();
 }

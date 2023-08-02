@@ -1,5 +1,6 @@
 import { BrowserWindow } from "electron"
 import * as path from "path";
+import { DevTools } from "../utils";
 
 
 // ************************
@@ -34,5 +35,5 @@ export function windowEventView(parent: BrowserWindow, eventId: Number) {
     });
 
     // Open the DevTools.
-    window.webContents.openDevTools();
+    if (DevTools) window.webContents.openDevTools();
 }

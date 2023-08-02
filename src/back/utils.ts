@@ -3,3 +3,5 @@ export const connection = {
     user: 'root',
     database: 'electron_calendar'
 }
+
+export const DevTools = false;
