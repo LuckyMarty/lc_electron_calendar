@@ -45,7 +45,10 @@
 
         <div>
             <label for="add_event_status">Status</label>
-            <input type="text" name="add_event_status" id="add_event_status">
+            <select name="add_event_status" id="add_event_status">
+                <option value="1">Active</option>
+                <option value="0">Disable</option>
+            </select>
         </div>
 
         <div>
@@ -55,10 +58,12 @@
 
         <div>
             <label for="add_event_transparence">Transparence</label>
-            <input type="text" name="add_event_transparence" id="add_event_transparence">
+            <input type="range" name="add_event_transparence" id="add_event_transparence" min="1" max="100" step="1">
         </div>
 
-        <input type="submit" value="Add">
+        <div class="form-buttons">
+            <input type="submit" value="Add">
+        </div>
     </form>
 
 

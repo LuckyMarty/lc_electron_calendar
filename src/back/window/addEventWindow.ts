@@ -12,7 +12,7 @@ export function windowEventAdd(parent: BrowserWindow) {
         modal: true,
         parent,
         width: 800,
-        height: 600,
+        height: 900,
         title: "Add New Event",
 
         icon: path.join(__dirname, "../../../src/assets/img/icon.png"),
