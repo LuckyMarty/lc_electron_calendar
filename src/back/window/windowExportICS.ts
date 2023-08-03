@@ -4,16 +4,18 @@ import { DevTools } from "../utils";
 
 
 // ************************
-// ADD EVENT WINDOW
+// EXPORT EVENT WINDOW (INVISIBLE !)
 // ************************
-export function windowEventAdd(parent: BrowserWindow) {
+export function windowExportICS(parent: BrowserWindow) {
+    let window: BrowserWindow | null;
     // Create window
-    const window = new BrowserWindow({
+    window = new BrowserWindow({
         modal: true,
         parent,
-        width: 800,
-        height: 900,
-        title: "Add New Event",
+        width: 400,
+        height: 300,
+        title: "Export ICS",
+        show: false,
 
         icon: path.join(__dirname, "../../../src/assets/img/icon.png"),
         webPreferences: {
@@ -26,7 +28,7 @@ export function windowEventAdd(parent: BrowserWindow) {
     window.setMenuBarVisibility(false)
 
     // Load content
-    window.loadFile('./pages/event/add.html')
+    window.loadFile('./pages/event/displayExportICS.html');
 
     // Open the DevTools.
     if (DevTools) window.webContents.openDevTools();

@@ -4,18 +4,17 @@ import { DevTools } from "../utils";
 
 
 // ************************
-// EXPORT EVENT WINDOW (INVISIBLE !)
+// VIEW / EDIT / DELETE EVENT WINDOW
 // ************************
-export function windowExportICS(parent: BrowserWindow) {
+export function windowViewEditDeleteEvent(parent: BrowserWindow, eventId: Number) {
     let window: BrowserWindow | null;
     // Create window
     window = new BrowserWindow({
         modal: true,
         parent,
-        width: 400,
-        height: 300,
-        title: "Export ICS",
-        show: false,
+        width: 800,
+        height: 900,
+        title: "Event",
 
         icon: path.join(__dirname, "../../../src/assets/img/icon.png"),
         webPreferences: {
@@ -28,7 +27,12 @@ export function windowExportICS(parent: BrowserWindow) {
     window.setMenuBarVisibility(false)
 
     // Load content
-    window.loadFile('./pages/event/export.html');
+    window.loadFile('./pages/event/displayViewEditDeleteEvent.html');
+
+    // Pass Event Id to ViewEventWindow
+    window.webContents.on('did-finish-load', () => {
+        window?.webContents.send('event-id', eventId);
+    });
 
     // Open the DevTools.
     if (DevTools) window.webContents.openDevTools();

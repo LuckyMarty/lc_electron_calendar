@@ -1,8 +1,8 @@
 import { BrowserWindow, dialog, ipcMain } from "electron"
 import { eventAdd, eventDelete, eventGetAll, eventGetById, eventUpdate } from "../model/EventModel"
 import { IEvent } from "../../interface/eventInterface";
-import { windowEventAdd } from "../window/addEventWindow";
-import { windowEventView } from "../window/viewEventWindow";
+import { windowEventAdd } from "../window/windowEventAdd";
+import { windowViewEditDeleteEvent } from "../window/windowViewEditDeleteEvent";
 const fs = require('fs');
 
 
@@ -15,7 +15,7 @@ export default (parent: BrowserWindow) => {
         return await eventGetAll()
     });
 
-    // Get all data by Id
+    // Get data by Id
     ipcMain.handle('bdd-event-get-by-id', async (e, id: Number) => {
         return await eventGetById(id)
     });
@@ -71,7 +71,7 @@ export default (parent: BrowserWindow) => {
 
     // View Event Window
     ipcMain.on('view-event', (event, eventId) => {
-        windowEventView(parent, eventId);
+        windowViewEditDeleteEvent(parent, eventId);
     })
 
 

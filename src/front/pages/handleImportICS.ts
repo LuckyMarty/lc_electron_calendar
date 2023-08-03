@@ -1,12 +1,10 @@
 const { ipcRenderer } = require('electron');
-import { IICS } from "../../interface/ICSInterface";
 import { IEvent } from "../../interface/eventInterface";
 import { parseICS, translateIcalDate } from "../utils.js";
 
 
-
+// On Click, launch import
 document.querySelector('#importButton')?.addEventListener('click', () => {
-    console.log("Clicked");
     importICS();
 })
 
@@ -30,7 +28,7 @@ function importICS() {
                     titre: event.summary,
                     location: "",
                     categorie: "",
-                    statut: "",
+                    statut: "1",
                     description: event.description,
                     transparence: "",
                     nbOfUpdate: 0
@@ -49,15 +47,20 @@ function importICS() {
 }
 
 
-// Functions
+// ************************
+// FUNCTIONS
+// ************************
+// Add Event
 async function eventAdd(newEvent: IEvent) {
     await ipcRenderer.invoke('bdd-event-add', newEvent)
 }
 
+// Close Current Window
 function closeCurrentWindow() {
     ipcRenderer.send('close-current-window');
 }
 
+// Refresh Main Window
 function refreshMainWindow() {
     ipcRenderer.send('refresh-main-window');
 }

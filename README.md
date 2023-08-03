@@ -1,11 +1,21 @@
 # Calendar with Electron
 
+![Lucky - Electron Calendar](https://s11.gifyu.com/images/SccJD.gif "Demo")
+
 ## What can you do?
 - Add Event
 - Update Event
 - Delete Event
-- Import iCalendar (ics)
+- Import iCalendar (ics) - sample ics file: [F1 Program 2023](https://github.com/LuckyMarty/lc_electron_calendar/blob/main/F1_Schedule.ics).
 - Export as iCalendar (ics)
+
+## Configurations
+
+```bash
+path: src/back/utils.ts
+```
+- Database
+- DevTools
 
 ## Before launch
 

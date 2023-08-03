@@ -16,7 +16,7 @@ export function eventGetAll(): Promise<IEvent[]> {
     })
 }
 
-// Get All Data by ID
+// Get Data by ID
 export function eventGetById(id: Number): Promise<IEvent[]> {
     return new Promise((resolve, rej) => {
         sql.query('SELECT * FROM event WHERE id = ?', id,
