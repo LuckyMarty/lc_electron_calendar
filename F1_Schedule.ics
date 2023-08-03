@@ -1,0 +1,956 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Calendar Labs//Calendar 1.0//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:F1 Schedule
+X-WR-TIMEZONE:UTC
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 PIRELLI GRAND PRIX DU CANADA 2023 - Practice 1
+DTSTART:20230616T173000Z
+DTEND:20230616T183000Z
+LOCATION:Canada
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f6889e1688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 PIRELLI GRAND PRIX DU CANADA 2023 - Practice 2
+DTSTART:20230616T203000Z
+DTEND:20230616T220000Z
+LOCATION:Canada
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f688e91688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 PIRELLI GRAND PRIX DU CANADA 2023 - Practice 3
+DTSTART:20230617T163000Z
+DTEND:20230617T173000Z
+LOCATION:Canada
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f6891a1688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY: FORMULA 1 PIRELLI GRAND PRIX DU CANADA 2023 - Qualifying
+DTSTART:20230617T200000Z
+DTEND:20230617T210000Z
+LOCATION:Canada
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f689811688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 PIRELLI GRAND PRIX DU CANADA 2023 - Race
+DTSTART:20230618T180000Z
+DTEND:20230618T200000Z
+LOCATION:Canada
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f689af1688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 ROLEX GROSSER PREIS VON ÃSTERREICH 2023 - Practice 1
+DTSTART:20230630T113000Z
+DTEND:20230630T123000Z
+LOCATION:Austria
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f689ed1688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY: FORMULA 1 ROLEX GROSSER PREIS VON ÃSTERREICH 2023 - Qualifying
+DTSTART:20230630T150000Z
+DTEND:20230630T160000Z
+LOCATION:Austria
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f68a501688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY: FORMULA 1 ROLEX GROSSER PREIS VON ÃSTERREICH 2023 - Sprint Shootout
+DTSTART:20230701T100000Z
+DTEND:20230701T104400Z
+LOCATION:Austria
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f68a7d1688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 ROLEX GROSSER PREIS VON ÃSTERREICH 2023 - Sprint Race
+DTSTART:20230701T143000Z
+DTEND:20230701T150000Z
+LOCATION:Austria
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f68ab91688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 ROLEX GROSSER PREIS VON ÃSTERREICH 2023 - Race
+DTSTART:20230702T130000Z
+DTEND:20230702T150000Z
+LOCATION:Austria
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f68af71688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 ARAMCO BRITISH GRAND PRIX 2023 - Practice 1
+DTSTART:20230707T113000Z
+DTEND:20230707T123000Z
+LOCATION:United Kingdom
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f68b251688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 ARAMCO BRITISH GRAND PRIX 2023 - Practice 2
+DTSTART:20230707T150000Z
+DTEND:20230707T160000Z
+LOCATION:United Kingdom
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f68b541688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 ARAMCO BRITISH GRAND PRIX 2023 - Practice 3
+DTSTART:20230708T103000Z
+DTEND:20230708T113000Z
+LOCATION:United Kingdom
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f68b831688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY: FORMULA 1 ARAMCO BRITISH GRAND PRIX 2023 - Qualifying
+DTSTART:20230708T140000Z
+DTEND:20230708T150000Z
+LOCATION:United Kingdom
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f68bb31688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 ARAMCO BRITISH GRAND PRIX 2023 - Race
+DTSTART:20230709T140000Z
+DTEND:20230709T160000Z
+LOCATION:United Kingdom
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f68be31688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 QATAR AIRWAYS HUNGARIAN GRAND PRIX 2023 - Practice 1
+DTSTART:20230721T113000Z
+DTEND:20230721T123000Z
+LOCATION:Hungary
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f68c141688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 QATAR AIRWAYS HUNGARIAN GRAND PRIX 2023 - Practice 2
+DTSTART:20230721T150000Z
+DTEND:20230721T160000Z
+LOCATION:Hungary
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f68c461688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 QATAR AIRWAYS HUNGARIAN GRAND PRIX 2023 - Practice 3
+DTSTART:20230722T103000Z
+DTEND:20230722T113000Z
+LOCATION:Hungary
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f68c781688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY: FORMULA 1 QATAR AIRWAYS HUNGARIAN GRAND PRIX 2023 - Qualifying
+DTSTART:20230722T140000Z
+DTEND:20230722T150000Z
+LOCATION:Hungary
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f68cb51688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 QATAR AIRWAYS HUNGARIAN GRAND PRIX 2023 - Race
+DTSTART:20230723T130000Z
+DTEND:20230723T150000Z
+LOCATION:Hungary
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f68ce91688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 MSC CRUISES BELGIAN GRAND PRIX 2023 - Practice 1
+DTSTART:20230728T113000Z
+DTEND:20230728T123000Z
+LOCATION:Belgium
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f68d1d1688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY: FORMULA 1 MSC CRUISES BELGIAN GRAND PRIX 2023 - Qualifying
+DTSTART:20230728T150000Z
+DTEND:20230728T160000Z
+LOCATION:Belgium
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f68d5c1688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY: FORMULA 1 MSC CRUISES BELGIAN GRAND PRIX 2023 - Sprint Shootout
+DTSTART:20230729T100000Z
+DTEND:20230729T104400Z
+LOCATION:Belgium
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f68d911688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 MSC CRUISES BELGIAN GRAND PRIX 2023 - Practice 2
+DTSTART:20230729T103000Z
+DTEND:20230729T113000Z
+LOCATION:Belgium
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f68dc61688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 MSC CRUISES BELGIAN GRAND PRIX 2023 - Sprint Race
+DTSTART:20230729T143000Z
+DTEND:20230729T153000Z
+LOCATION:Belgium
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f68dfc1688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 MSC CRUISES BELGIAN GRAND PRIX 2023 - Race
+DTSTART:20230730T130000Z
+DTEND:20230730T150000Z
+LOCATION:Belgium
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f68e331688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 HEINEKEN DUTCH GRAND PRIX 2023 - Practice 1
+DTSTART:20230825T103000Z
+DTEND:20230825T113000Z
+LOCATION:Netherlands
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f68e8e1688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 HEINEKEN DUTCH GRAND PRIX 2023 - Practice 2
+DTSTART:20230825T140000Z
+DTEND:20230825T150000Z
+LOCATION:Netherlands
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f68ec71688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 HEINEKEN DUTCH GRAND PRIX 2023 - Practice 3
+DTSTART:20230826T093000Z
+DTEND:20230826T103000Z
+LOCATION:Netherlands
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f68f001688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY: FORMULA 1 HEINEKEN DUTCH GRAND PRIX 2023 - Qualifying
+DTSTART:20230826T130000Z
+DTEND:20230826T140000Z
+LOCATION:Netherlands
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f68f391688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 HEINEKEN DUTCH GRAND PRIX 2023 - Race
+DTSTART:20230827T130000Z
+DTEND:20230827T150000Z
+LOCATION:Netherlands
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f68f731688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 PIRELLI GRAN PREMIO DâITALIA 2023  - Practice 1
+DTSTART:20230901T113000Z
+DTEND:20230901T123000Z
+LOCATION:Italy
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f68fad1688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 PIRELLI GRAN PREMIO DâITALIA 2023  - Practice 2
+DTSTART:20230901T150000Z
+DTEND:20230901T160000Z
+LOCATION:Italy
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f68fe81688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 PIRELLI GRAN PREMIO DâITALIA 2023  - Practice 3
+DTSTART:20230902T103000Z
+DTEND:20230902T113000Z
+LOCATION:Italy
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f690231688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY: FORMULA 1 PIRELLI GRAN PREMIO DâITALIA 2023  - Qualifying
+DTSTART:20230902T140000Z
+DTEND:20230902T150000Z
+LOCATION:Italy
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f6905f1688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 PIRELLI GRAN PREMIO DâITALIA 2023  - Race
+DTSTART:20230903T130000Z
+DTEND:20230903T150000Z
+LOCATION:Italy
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f6909b1688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 SINGAPORE AIRLINES SINGAPORE GRAND PRIX 2023  - Practice 1
+DTSTART:20230915T093000Z
+DTEND:20230915T103000Z
+LOCATION:Singapore
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f690d91688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 SINGAPORE AIRLINES SINGAPORE GRAND PRIX 2023  - Practice 2
+DTSTART:20230915T130000Z
+DTEND:20230915T140000Z
+LOCATION:Singapore
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f6912b1688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 SINGAPORE AIRLINES SINGAPORE GRAND PRIX 2023  - Practice 3
+DTSTART:20230916T093000Z
+DTEND:20230916T103000Z
+LOCATION:Singapore
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f6916a1688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY: FORMULA 1 SINGAPORE AIRLINES SINGAPORE GRAND PRIX 2023  - Qualifying
+DTSTART:20230916T130000Z
+DTEND:20230916T140000Z
+LOCATION:Singapore
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f691a91688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 SINGAPORE AIRLINES SINGAPORE GRAND PRIX 2023  - Race
+DTSTART:20230917T120000Z
+DTEND:20230917T140000Z
+LOCATION:Singapore
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f691e81688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 LENOVO JAPANESE GRAND PRIX 2023  - Practice 1
+DTSTART:20230922T023000Z
+DTEND:20230922T033000Z
+LOCATION:Japan
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f692281688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 LENOVO JAPANESE GRAND PRIX 2023  - Practice 2
+DTSTART:20230922T060000Z
+DTEND:20230922T073000Z
+LOCATION:Japan
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f692871688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 LENOVO JAPANESE GRAND PRIX 2023  - Practice 3
+DTSTART:20230923T023000Z
+DTEND:20230923T033000Z
+LOCATION:Japan
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f692d71688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY: FORMULA 1 LENOVO JAPANESE GRAND PRIX 2023  - Qualifying
+DTSTART:20230923T060000Z
+DTEND:20230923T070000Z
+LOCATION:Japan
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f693191688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 LENOVO JAPANESE GRAND PRIX 2023  - Race
+DTSTART:20230924T050000Z
+DTEND:20230924T070000Z
+LOCATION:Japan
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f6937d1688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 QATAR AIRWAYS QATAR GRAND PRIX 2023 - Practice 1
+DTSTART:20231006T133000Z
+DTEND:20231006T143000Z
+LOCATION:Qatar
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f693c11688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 QATAR AIRWAYS QATAR GRAND PRIX 2023 - Qualifying
+DTSTART:20231006T170000Z
+DTEND:20231006T180000Z
+LOCATION:Qatar
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f694051688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY: FORMULA 1 QATAR AIRWAYS QATAR GRAND PRIX 2023 - Sprint Shootout
+DTSTART:20231007T130000Z
+DTEND:20231007T134400Z
+LOCATION:Qatar
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f694491688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 QATAR AIRWAYS QATAR GRAND PRIX 2023 - Practice 2
+DTSTART:20231007T133000Z
+DTEND:20231007T143000Z
+LOCATION:Qatar
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f6948e1688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 QATAR AIRWAYS QATAR GRAND PRIX 2023 - Sprint Race
+DTSTART:20231007T173000Z
+DTEND:20231007T183000Z
+LOCATION:Qatar
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f694d31688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 QATAR AIRWAYS QATAR GRAND PRIX 2023 - Race
+DTSTART:20231008T170000Z
+DTEND:20231008T190000Z
+LOCATION:Qatar
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f695191688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 LENOVO UNITED STATES GRAND PRIX 2023 - Practice 1
+DTSTART:20231020T173000Z
+DTEND:20231020T183000Z
+LOCATION:United States
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f695601688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY: FORMULA 1 LENOVO UNITED STATES GRAND PRIX 2023 - Qualifying
+DTSTART:20231020T210000Z
+DTEND:20231020T220000Z
+LOCATION:United States
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f695a81688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY: FORMULA 1 LENOVO UNITED STATES GRAND PRIX 2023 - Sprint Shootout
+DTSTART:20231021T173000Z
+DTEND:20231021T181400Z
+LOCATION:United States
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f695ef1688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 LENOVO UNITED STATES GRAND PRIX 2023 - Practice 2
+DTSTART:20231021T180000Z
+DTEND:20231021T190000Z
+LOCATION:United States
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f696371688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 LENOVO UNITED STATES GRAND PRIX 2023 - Sprint Race
+DTSTART:20231021T220000Z
+DTEND:20231021T230000Z
+LOCATION:United States
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f6968c1688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 LENOVO UNITED STATES GRAND PRIX 2023 - Race
+DTSTART:20231022T190000Z
+DTEND:20231022T210000Z
+LOCATION:United States
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f696d51688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 GRAN PREMIO DE LA CIUDAD DE MÃXICO 2023 - Practice 1
+DTSTART:20231027T183000Z
+DTEND:20231027T193000Z
+LOCATION:Mexico
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f6971f1688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 GRAN PREMIO DE LA CIUDAD DE MÃXICO 2023 - Practice 2
+DTSTART:20231027T220000Z
+DTEND:20231027T233000Z
+LOCATION:Mexico
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f697691688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 GRAN PREMIO DE LA CIUDAD DE MÃXICO 2023 - Practice 3
+DTSTART:20231028T173000Z
+DTEND:20231028T183000Z
+LOCATION:Mexico
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f697b41688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY: FORMULA 1 GRAN PREMIO DE LA CIUDAD DE MÃXICO 2023 - Qualifying
+DTSTART:20231028T210000Z
+DTEND:20231028T220000Z
+LOCATION:Mexico
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f697ff1688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 GRAN PREMIO DE LA CIUDAD DE MÃXICO 2023 - Race
+DTSTART:20231029T200000Z
+DTEND:20231029T220000Z
+LOCATION:Mexico
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f6984a1688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 ROLEX GRANDE PRÃMIO DE SÃO PAULO 2023 - Practice 1
+DTSTART:20231103T143000Z
+DTEND:20231103T153000Z
+LOCATION:Brazil
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f698971688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY: FORMULA 1 ROLEX GRANDE PRÃMIO DE SÃO PAULO 2023 - Qualifying
+DTSTART:20231103T180000Z
+DTEND:20231103T190000Z
+LOCATION:Brazil
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f698e31688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY: FORMULA 1 ROLEX GRANDE PRÃMIO DE SÃO PAULO 2023 - Sprint Shootout
+DTSTART:20231104T140000Z
+DTEND:20231104T144400Z
+LOCATION:Brazil
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f699471688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 ROLEX GRANDE PRÃMIO DE SÃO PAULO 2023 - Practice 2
+DTSTART:20231104T143000Z
+DTEND:20231104T153000Z
+LOCATION:Brazil
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f699951688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 ROLEX GRANDE PRÃMIO DE SÃO PAULO 2023 - Sprint Race
+DTSTART:20231104T183000Z
+DTEND:20231104T193000Z
+LOCATION:Brazil
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f699e31688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 ROLEX GRANDE PRÃMIO DE SÃO PAULO 2023 - Race
+DTSTART:20231105T170000Z
+DTEND:20231105T190000Z
+LOCATION:Brazil
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f69a331688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 HEINEKEN SILVER LAS VEGAS GRAND PRIX 2023 - Practice 1
+DTSTART:20231117T043000Z
+DTEND:20231117T053000Z
+LOCATION:United States
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f69a8c1688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 HEINEKEN SILVER LAS VEGAS GRAND PRIX 2023 - Practice 2
+DTSTART:20231117T080000Z
+DTEND:20231117T090000Z
+LOCATION:United States
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f69add1688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 HEINEKEN SILVER LAS VEGAS GRAND PRIX 2023 - Practice 3
+DTSTART:20231118T043000Z
+DTEND:20231118T053000Z
+LOCATION:United States
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f69b2e1688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY: FORMULA 1 HEINEKEN SILVER LAS VEGAS GRAND PRIX 2023 - Qualifying
+DTSTART:20231118T080000Z
+DTEND:20231118T090000Z
+LOCATION:United States
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f69b7f1688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 HEINEKEN SILVER LAS VEGAS GRAND PRIX 2023 - Race
+DTSTART:20231119T060000Z
+DTEND:20231119T080000Z
+LOCATION:United States
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f69bf21688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 ETIHAD AIRWAYS ABU DHABI GRAND PRIX 2023  - Practice 1
+DTSTART:20231124T093000Z
+DTEND:20231124T103000Z
+LOCATION:United Arab Emirates
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f69c441688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 ETIHAD AIRWAYS ABU DHABI GRAND PRIX 2023  - Practice 2
+DTSTART:20231124T130000Z
+DTEND:20231124T140000Z
+LOCATION:United Arab Emirates
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f69c971688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 ETIHAD AIRWAYS ABU DHABI GRAND PRIX 2023  - Practice 3
+DTSTART:20231125T103000Z
+DTEND:20231125T113000Z
+LOCATION:United Arab Emirates
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f69cec1688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY: FORMULA 1 ETIHAD AIRWAYS ABU DHABI GRAND PRIX 2023  - Qualifying
+DTSTART:20231125T140000Z
+DTEND:20231125T150000Z
+LOCATION:United Arab Emirates
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f69d401688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:FORMULA 1 ETIHAD AIRWAYS ABU DHABI GRAND PRIX 2023  - Race
+DTSTART:20231126T130000Z
+DTEND:20231126T150000Z
+LOCATION:United Arab Emirates
+DESCRIPTION:Discover and subscribe to popular calendars at https://calendarlabs.com/ical-calendar\n\n Like us on Facebook: http://fb.com/calendarlabs to get updates
+UID:64a4111f69d951688473887@calendarlabs.com
+DTSTAMP:20230704T073127Z
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+SEQUENCE:0
+END:VEVENT
+END:VCALENDAR

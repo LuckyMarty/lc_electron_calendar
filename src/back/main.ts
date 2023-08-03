@@ -1,8 +1,13 @@
-import { app, BrowserWindow, Menu } from "electron";
+import { app, BrowserWindow, dialog, ipcRenderer, Menu } from "electron";
 import * as path from "path";
 import EventEvent from "./event/EventEvent";
 import { windowEventAdd } from "./window/addEventWindow";
 import { DevTools } from "./utils";
+import { windowImportICS } from "./window/importICSWindow";
+import { windowExportICS } from "./window/exportICSWindow";
+import { eventGetAll } from "./model/EventModel";
+import { IEvent } from "../interface/eventInterface";
+
 
 // ************************
 // MAIN WINDOW
@@ -28,6 +33,8 @@ function createWindow() {
   // Open the DevTools.
   if (DevTools) mainWindow.webContents.openDevTools();
 
+
+
   // Custom Menu Bar
   const menuTpl: any = [
     {
@@ -40,6 +47,18 @@ function createWindow() {
           click: () => {
             mainWindow.reload();
           }
+        },
+        {
+          label: 'Import iCalendar',
+          type: 'normal',
+          click: () => {
+            windowImportICS(mainWindow);
+          }
+        },
+        {
+          label: 'Export as iCalendar',
+          type: 'normal',
+          click: () => windowExportICS(mainWindow),
         },
         {
           type: 'separator'
@@ -58,9 +77,7 @@ function createWindow() {
         {
           label: 'Add',
           type: 'normal',
-          click: () => {
-            windowEventAdd(mainWindow);
-          }
+          click: () => windowEventAdd(mainWindow)
         }
       ]
     }

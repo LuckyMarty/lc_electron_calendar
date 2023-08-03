@@ -1,8 +1,10 @@
-import { BrowserWindow, ipcMain } from "electron"
+import { BrowserWindow, dialog, ipcMain } from "electron"
 import { eventAdd, eventDelete, eventGetAll, eventGetById, eventUpdate } from "../model/EventModel"
 import { IEvent } from "../../interface/eventInterface";
 import { windowEventAdd } from "../window/addEventWindow";
 import { windowEventView } from "../window/viewEventWindow";
+const fs = require('fs');
+
 
 export default (parent: BrowserWindow) => {
     // ************************
@@ -32,7 +34,32 @@ export default (parent: BrowserWindow) => {
     ipcMain.handle('bdd-event-delete', async (e, id: number) => {
         return await eventDelete(id)
     });
-    
+
+    // Export as iCalendar
+    ipcMain.on('export-file', async (event, fileData) => {
+        const saveResult = await dialog.showSaveDialog(parent, {
+            title: 'Export File',
+            defaultPath: 'Lucky-Marty_Electron-Calendar.ics',
+            filters: [{ name: 'Text Files', extensions: ['ics'] }]
+        });
+
+        if (!saveResult.canceled) {
+            const filePath = saveResult.filePath;
+
+            // Write the file to the specified location
+            fs.writeFile(filePath, fileData, 'utf8', (err: any) => {
+                if (err) {
+                    console.error('Error saving the file:', err);
+                    // Notify the renderer process about the failure
+                    event.reply('export-file-response', { success: false, error: err });
+                } else {
+                    console.log('File saved successfully.');
+                    // Notify the renderer process about the success
+                    event.reply('export-file-response', { success: true });
+                }
+            });
+        }
+    });
 
     // ************************
     // WINDOWS

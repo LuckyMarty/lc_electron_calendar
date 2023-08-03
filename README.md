@@ -4,6 +4,8 @@
 - Add Event
 - Update Event
 - Delete Event
+- Import iCalendar (ics)
+- Export as iCalendar (ics)
 
 ## Before launch
 
