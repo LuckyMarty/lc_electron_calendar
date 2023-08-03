@@ -4,4 +4,4 @@ export const connection = {
     database: 'electron_calendar'
 }
 
-export const DevTools = true;
+export const DevTools = false;
