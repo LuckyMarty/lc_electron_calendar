@@ -163,7 +163,7 @@ export default async function calendar() {
         let events: Array<IEvent> = [];
         if (result) {
             result.forEach(element => {
-                if (dateCheck(new Date(element.date_deb).toLocaleDateString(), new Date(element.date_fin).toLocaleDateString(), new Date(`${currentMonth + 1}/${date}/${currentYear}`).toLocaleDateString())) {
+                if (dateCheck(new Date(element.date_deb), new Date(element.date_fin), new Date(`${currentMonth + 1}/${date}/${currentYear}`))) {
                     events.push(element);
                 }
             });
@@ -172,7 +172,7 @@ export default async function calendar() {
         if (events) {
             events.forEach(event => {
                 if (event.id) {
-                    if (sameDate(getDateToString(event.date_deb), getDateToString(event.date_fin))) {
+                    if (sameDate(event.date_deb, event.date_fin)) {
                         let from = `${getTimeToString(event.date_deb)}`;
                         let to = `${getTimeToString(event.date_fin)}`;
                         cell.append(displayEvent(event.id, event.titre, `${from} - ${to}`));

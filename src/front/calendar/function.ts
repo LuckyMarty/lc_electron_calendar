@@ -28,11 +28,11 @@ const viewEvent = (eventId: Number) => {
 
 
 // Check if date is in range
-export const dateCheck = (from: string, to: string, check: string): boolean => {
+export const dateCheck = (from: Date, to: Date, check: Date): boolean => {
     let fDate, lDate, cDate;
-    fDate = Date.parse(from);
-    lDate = Date.parse(to);
-    cDate = Date.parse(check);
+    fDate = Date.parse(`${from.getFullYear()}-${from.getMonth()}-${from.getDate()}`);
+    lDate = Date.parse(`${to.getFullYear()}-${to.getMonth()}-${to.getDate()}`);
+    cDate = Date.parse(`${check.getFullYear()}-${check.getMonth()}-${check.getDate()}`);
 
     if ((cDate <= lDate && cDate >= fDate)) {
         return true;
@@ -41,10 +41,13 @@ export const dateCheck = (from: string, to: string, check: string): boolean => {
 }
 
 // Check if From and To Date are the same
-export const sameDate = (from: string, to: string): boolean => {
+export const sameDate = (from: Date, to: Date): boolean => {
     let fDate, lDate;
-    fDate = Date.parse(from);
-    lDate = Date.parse(to);
+    fDate = Date.parse(`${from.getFullYear()}-${from.getMonth()}-${from.getDate()}`);
+    lDate = Date.parse(`${to.getFullYear()}-${to.getMonth()}-${to.getDate()}`);
+
+    console.log("DATE PARSE",fDate, lDate);
+    
 
     if ((fDate == lDate)) {
         return true;
