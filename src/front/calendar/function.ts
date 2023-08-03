@@ -46,9 +46,6 @@ export const sameDate = (from: Date, to: Date): boolean => {
     fDate = Date.parse(`${from.getFullYear()}-${from.getMonth()}-${from.getDate()}`);
     lDate = Date.parse(`${to.getFullYear()}-${to.getMonth()}-${to.getDate()}`);
 
-    console.log("DATE PARSE",fDate, lDate);
-    
-
     if ((fDate == lDate)) {
         return true;
     }

@@ -1,8 +1,9 @@
-// ************************
-// INPUTS
-
 import { IICS } from "../interface/ICSInterface";
 
+
+
+// ************************
+// INPUTS
 // ************************
 export const getInput = (element: string): HTMLInputElement => {
     return document.querySelector(element) as HTMLInputElement;
