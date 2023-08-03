@@ -6,15 +6,14 @@ import { DevTools } from "../utils";
 // ************************
 // ADD EVENT WINDOW
 // ************************
-export function windowImportICS(parent: BrowserWindow) {
-    let window: BrowserWindow | null;
+export function windowEventAdd(parent: BrowserWindow) {
     // Create window
-    window = new BrowserWindow({
+    const window = new BrowserWindow({
         modal: true,
         parent,
-        width: 400,
-        height: 300,
-        title: "Import ICS",
+        width: 800,
+        height: 900,
+        title: "Add New Event",
 
         icon: path.join(__dirname, "../../../src/assets/img/icon.png"),
         webPreferences: {
@@ -27,7 +26,7 @@ export function windowImportICS(parent: BrowserWindow) {
     window.setMenuBarVisibility(false)
 
     // Load content
-    window.loadFile('./pages/event/import.html');
+    window.loadFile('./pages/event/displayAddEvent.html')
 
     // Open the DevTools.
     if (DevTools) window.webContents.openDevTools();

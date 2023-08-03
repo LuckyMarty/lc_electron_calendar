@@ -1,7 +1,6 @@
 import { IICS } from "../interface/ICSInterface";
 
 
-
 // ************************
 // INPUTS
 // ************************
@@ -33,7 +32,7 @@ export const setStringValue = (element: string, content: string) => {
 // ************************
 // DATE
 // ************************
-// 01/08/2023 10:00 - 02/08/2023 16:00
+// Date - Date → 01/08/2023 10:00 - 02/08/2023 16:00
 export const rangeDate = (from: Date, to: Date): string => {
     return `${formatDateToFR(from)} ${formatTime12to24(from)} - ${formatDateToFR(to)} ${formatTime12to24(to)}`
 }
@@ -43,7 +42,7 @@ export const formatTime12to24 = (time: Date): string => {
     return `${time.getHours().toString().padStart(2, '0')}:${time.getMinutes().toString().padStart(2, '0')}`;
 }
 
-// DD/MM/YYYY
+// Date → DD/MM/YYYY
 export const formatDateToFR = (date: Date): string => {
     return date.toLocaleDateString('fr-FR', {
         year: 'numeric',
@@ -52,11 +51,13 @@ export const formatDateToFR = (date: Date): string => {
     });
 }
 
+// VALUE=DATE:20230701 or 20110914T184000Z → Date
 export function translateIcalDate(date: string): Date {
     let year, month, day, hour, min, sec, convertedDate;
 
-    // VALUE=DATE:20230701
+    // Check if in iCal Date are VALUE=DATE or ISO Format
     if (/[a-zA-Z]/.test(date[0])) {
+        // VALUE=DATE:20230701
         const dateValue = extractNumbersFromString(date);
         year = parseInt(dateValue.slice(0, 4));
         month = parseInt(dateValue.slice(4, 6)) - 1;
@@ -71,6 +72,7 @@ export function translateIcalDate(date: string): Date {
             convertedDate = new Date(year, month, day);
         }
     } else {
+        // ISO Format
         // 0 1 2 3 | 4 5 | 6 7 | 8 | 9 10 | 11 12 | 13 14 | 15
         // 2 0 1 1 | 0 9 | 1 4 | T | 1  8 |  4  0 |  0  0 |  Z  
         year = parseInt(date.slice(0, 4));
@@ -85,20 +87,20 @@ export function translateIcalDate(date: string): Date {
     return convertedDate;
 }
 
+// VALUE=DATE:20230701 → 20230701
 function extractNumbersFromString(inputString: string): string {
     let numberString = "";
     for (let i = 0; i < inputString.length; i++) {
-      const char = inputString.charAt(i);
-      if (!isNaN(parseInt(char))) {
-        numberString += char;
-      }
+        const char = inputString.charAt(i);
+        if (!isNaN(parseInt(char))) {
+            numberString += char;
+        }
     }
     return numberString;
-  }
+}
 
-
+// 01/08/2023 10:00 - 02/08/2023 06:00 → [Date, Date]
 export const splitDate = (dates: string) => {
-    // 01/08/2023 10:00 - 02/08/2023 06:00
     let splitDate = dates.split('-');
 
     // From
@@ -129,12 +131,17 @@ export const splitDate = (dates: string) => {
     ]
 }
 
+
+// ************************
+// iCalendar
+// ************************
+// Convert ics → object
 export const parseICS = (fileContent: string): IICS[] => {
     const lines = fileContent.split(/\r?\n/);
     const parsedData: IICS[] = [];
     let event: Partial<IICS> = {};
 
-    for (const line of lines) {
+    lines.forEach(line => {
         if (line.startsWith('BEGIN:VEVENT')) {
             event = {};
         } else if (line.startsWith('END:VEVENT')) {
@@ -148,7 +155,7 @@ export const parseICS = (fileContent: string): IICS[] => {
         } else if (line.startsWith('DESCRIPTION')) {
             event.description = line.substring(12);
         }
-    }
+    })
 
     return parsedData;
 }

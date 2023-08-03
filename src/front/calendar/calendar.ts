@@ -7,9 +7,11 @@ export default async function calendar() {
     const currentDate: Date = new Date();
     let currentMonth: number = currentDate.getMonth();
     let currentYear: number = currentDate.getFullYear();
+
+    // Display Calendar
     displayCalendar(currentMonth, currentYear);
 
-
+    
     async function displayCalendar(month: number, year: number) {
         const calendarContainer: HTMLElement | null = document.getElementById("calendar");
         if (calendarContainer) {

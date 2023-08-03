@@ -1,10 +1,10 @@
 import { app, BrowserWindow, dialog, ipcRenderer, Menu } from "electron";
 import * as path from "path";
 import EventEvent from "./event/EventEvent";
-import { windowEventAdd } from "./window/addEventWindow";
+import { windowEventAdd } from "./window/windowEventAdd";
 import { DevTools } from "./utils";
-import { windowImportICS } from "./window/importICSWindow";
-import { windowExportICS } from "./window/exportICSWindow";
+import { windowImportICS } from "./window/windowImportICS";
+import { windowExportICS } from "./window/windowExportICS";
 import { eventGetAll } from "./model/EventModel";
 import { IEvent } from "../interface/eventInterface";
 
@@ -23,8 +23,10 @@ function createWindow() {
     },
   });
 
+  // Events
   EventEvent(mainWindow);
 
+  // Make it Fullscreen
   mainWindow.maximize()
 
   // and load the index.html of the app.
@@ -32,8 +34,6 @@ function createWindow() {
 
   // Open the DevTools.
   if (DevTools) mainWindow.webContents.openDevTools();
-
-
 
   // Custom Menu Bar
   const menuTpl: any = [

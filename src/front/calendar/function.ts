@@ -26,7 +26,6 @@ const viewEvent = (eventId: Number) => {
     ipcRenderer.send('view-event', eventId);
 }
 
-
 // Check if date is in range
 export const dateCheck = (from: Date, to: Date, check: Date): boolean => {
     let fDate, lDate, cDate;
