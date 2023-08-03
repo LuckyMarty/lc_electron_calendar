@@ -3,6 +3,7 @@ import * as path from "path";
 import EventEvent from "./event/EventEvent";
 import { windowEventAdd } from "./window/addEventWindow";
 import { DevTools } from "./utils";
+import { windowImportICS } from "./window/importICSWindow";
 
 // ************************
 // MAIN WINDOW
@@ -39,6 +40,13 @@ function createWindow() {
           type: 'normal',
           click: () => {
             mainWindow.reload();
+          }
+        },
+        {
+          label: 'Import',
+          type: 'normal',
+          click: () => {
+            windowImportICS(mainWindow);
           }
         },
         {
