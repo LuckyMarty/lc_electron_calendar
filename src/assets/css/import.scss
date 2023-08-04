@@ -1,0 +1,88 @@
+
+@import './partials/_variables';
+@import './partials/_fonts';
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: $font-1-regular;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    height: 100vh;
+    width: 100vw;
+}
+
+.drag-drop-zone {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 0.3s;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    &.drag-over {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    #file-name {
+        margin-top: 20px;
+    }
+
+    #drop-text {
+        display: block;
+    }
+
+    input[type="file"] {
+        display: none;
+    }
+
+    .upload-button {
+        padding: 8px;
+        background-color: #ccc;
+        color: #333;
+        border: none;
+        cursor: pointer;
+    }
+
+    .message {
+        display: inline-flex;
+        gap: 8px;
+
+        p {
+            margin: 8px 0;
+        }
+    }
+
+    #importButton {
+        display: none;
+
+        cursor: pointer;
+
+        width: 200px;
+        border: none;
+        padding: 14px;
+        margin-top: 25px;
+        
+        font-size: large;
+        text-align: center;
+
+        background-color: $black;
+        color: $white;
+
+        &:hover {
+            background-color: $gray;
+            color: $black;
+            font-weight: bold;
+        }
+    }
+}
