@@ -1,7 +1,7 @@
 import { app, BrowserWindow, dialog, ipcRenderer, Menu } from "electron";
 import * as path from "path";
 import EventEvent from "./event/EventEvent";
-import { windowEventAdd } from "./window/windowEventAdd";
+import { windowAddEvent } from "./window/windowAddEvent";
 import { DevTools } from "./utils";
 import { windowImportICS } from "./window/windowImportICS";
 import { windowExportICS } from "./window/windowExportICS";
@@ -77,7 +77,7 @@ function createWindow() {
         {
           label: 'Add',
           type: 'normal',
-          click: () => windowEventAdd(mainWindow)
+          click: () => windowAddEvent(mainWindow)
         }
       ]
     }

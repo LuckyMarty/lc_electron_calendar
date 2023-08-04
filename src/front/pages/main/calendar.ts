@@ -1,6 +1,4 @@
-import { IEvent } from "../../interface/eventInterface.js";
-import { dateCheck, displayEvent, getDateToString, getTimeToString, sameDate } from "./function.js";
-const { ipcRenderer } = require('electron');
+import { createNavButton, dayName, displayEvents, monthName } from "../../utils/utils_calendar.js";
 
 export default async function calendar() {
     // Init
@@ -8,47 +6,36 @@ export default async function calendar() {
     let currentMonth: number = currentDate.getMonth();
     let currentYear: number = currentDate.getFullYear();
 
-    // Display Calendar
     displayCalendar(currentMonth, currentYear);
 
-    
     async function displayCalendar(month: number, year: number) {
         const calendarContainer: HTMLElement | null = document.getElementById("calendar");
+        
         if (calendarContainer) {
             calendarContainer.innerHTML = '';
+
             const firstDay: Date = new Date(year, month, 1);
             const daysInMonth: number = new Date(year, month + 1, 0).getDate();
             const startingDay: number = firstDay.getDay();
-
 
             // Calendar Title
             const calendarTitle = document.querySelector("#calendar-title");
             calendarTitle ? calendarTitle.textContent = monthName(month) + " " + year.toString() : '';
 
-
             // Buttons
             const calendarNavigationButtons = document.querySelector("#calendar-navigation-buttons");
-            calendarNavigationButtons && (calendarNavigationButtons.innerHTML = '');
-            // → Previous
-            const prevButton = document.createElement('button');
-            prevButton.id = "previousMonth";
-            prevButton.innerHTML = "&#10094;";
-            calendarNavigationButtons && calendarNavigationButtons.append(prevButton);
-            // → Next
-            const nextButton = document.createElement('button');
-            nextButton.id = "nextMonth";
-            nextButton.innerHTML = "&#10095;";
-            calendarNavigationButtons && calendarNavigationButtons.append(nextButton);
-
+            if (calendarNavigationButtons) {
+                calendarNavigationButtons.innerHTML = '';
+                calendarNavigationButtons.append(createNavButton('previousMonth', '&#10094;'));
+                calendarNavigationButtons.append(createNavButton('nextMonth', '&#10095;'));
+            }
 
             // Create Calendar Table
             const calendarTable: HTMLTableElement = document.createElement("table");
-
-            // Header
-            const header: HTMLTableSectionElement = calendarTable.createTHead();
-            const headerRow: HTMLTableRowElement = header.insertRow();
-
+            calendarTable.createTHead().insertRow();
+            
             const weekdaysRow: HTMLTableRowElement = calendarTable.insertRow();
+
             for (let i: number = 0; i < dayName().length; i++) {
                 const cell: HTMLTableCellElement = weekdaysRow.insertCell();
                 if (i === 5 || i === 6) {
@@ -68,7 +55,6 @@ export default async function calendar() {
 
                 cell.textContent = dayName(i).name;
             }
-
 
             // Body
             const body: HTMLTableSectionElement = calendarTable.createTBody();
@@ -119,7 +105,7 @@ export default async function calendar() {
 
             calendarContainer.appendChild(calendarTable);
 
-            // Buttons Action
+            // Listen Buttons Action
             // → Previous
             const previousMonthButton = document.querySelector("#previousMonth");
             previousMonthButton?.addEventListener('click', () => previousMonth());
@@ -147,44 +133,5 @@ export default async function calendar() {
             currentYear++;
         }
         displayCalendar(currentMonth, currentYear);
-    }
-
-    function dayName(day: number = 1) {
-        const dayNames: string[] = ["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"];
-        return { "name": dayNames[day], "length": dayNames.length };
-    }
-    function monthName(month: number): string {
-        const monthNames: string[] = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
-        return monthNames[month];
-    }
-
-
-    // Functions
-    async function displayEvents(cell: HTMLElement, currentMonth: number, date: number, currentYear: number) {
-        const result = await ipcRenderer.invoke('bdd-event-get-all') as IEvent[];
-        let events: Array<IEvent> = [];
-        if (result) {
-            result.forEach(element => {
-                if (dateCheck(new Date(element.date_deb), new Date(element.date_fin), new Date(`${currentMonth + 1}/${date}/${currentYear}`))) {
-                    events.push(element);
-                }
-            });
-        }
-
-        if (events) {
-            events.forEach(event => {
-                if (event.id) {
-                    if (sameDate(event.date_deb, event.date_fin)) {
-                        let from = `${getTimeToString(event.date_deb)}`;
-                        let to = `${getTimeToString(event.date_fin)}`;
-                        cell.append(displayEvent(event.id, event.titre, `${from} - ${to}`));
-                    } else {
-                        let from = `Du ${getDateToString(event.date_deb)} à ${getTimeToString(event.date_deb)}`;
-                        let to = `Au ${getDateToString(event.date_fin)} à ${getTimeToString(event.date_fin)}`;
-                        cell.append(displayEvent(event.id, event.titre, `${from} <br> ${to}`));
-                    }
-                }
-            });
-        }
     }
 }

@@ -1,6 +1,7 @@
 const { ipcRenderer } = require('electron');
 import { IEvent } from "../../interface/eventInterface";
-import { parseICS, translateIcalDate } from "../utils.js";
+import { closeCurrentWindow, eventAdd, refreshMainWindow } from "../utils/utils_ipc.js";
+import { parseICS, translateIcalDate } from "../utils/utils.js";
 
 
 // Save Upload File Data
@@ -74,23 +75,7 @@ function importICS(fileUpload: any) {
 
 }
 
-// ------------------------
-// ACTIONS
-// ------------------------
-// Add Event
-async function eventAdd(newEvent: IEvent) {
-    await ipcRenderer.invoke('bdd-event-add', newEvent)
-}
 
-// Close Current Window
-function closeCurrentWindow() {
-    ipcRenderer.send('close-current-window');
-}
-
-// Refresh Main Window
-function refreshMainWindow() {
-    ipcRenderer.send('refresh-main-window');
-}
 
 
 // ------------------------

@@ -1,6 +1,7 @@
 const { ipcRenderer } = require('electron');
 import { IEvent } from "../../interface/eventInterface";
-import { emptyValue, getValueAsString, splitDate } from "../utils.js";
+import { emptyValue, getValueAsString, splitDate } from "../utils/utils.js";
+import { closeCurrentWindow, eventAdd, refreshMainWindow } from "../utils/utils_ipc.js";
 
 
 // ************************
@@ -49,17 +50,4 @@ if (addEventForm) {
         refreshMainWindow();
         closeCurrentWindow();
     })
-
-    // Functions
-    async function eventAdd(newEvent: IEvent) {
-        await ipcRenderer.invoke('bdd-event-add', newEvent)
-    }
-
-    function closeCurrentWindow() {
-        ipcRenderer.send('close-current-window');
-    }
-
-    function refreshMainWindow() {
-        ipcRenderer.send('refresh-main-window');
-    }
 }

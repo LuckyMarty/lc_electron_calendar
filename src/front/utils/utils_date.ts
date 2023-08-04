@@ -1,31 +1,3 @@
-const { ipcRenderer } = require('electron');
-
-
-// Display Event Card
-export const displayEvent = (id: number, title: string, content: string): HTMLDivElement => {
-    // Events
-    const event = document.createElement('div');
-    const eventTitle = document.createElement('div');
-    const eventTimes = document.createElement('div');
-    // → Event Container
-    event.id = `id-${id.toString()}`;
-    event.className = "event";
-    event.onclick = () => viewEvent(id);
-    // → Event Title
-    eventTitle.className = "event-title";
-    eventTitle.innerText = title;
-    // → Event Hour
-    eventTimes.className = "event-hour";
-    eventTimes.innerHTML = content;
-    event.append(eventTitle, eventTimes)
-
-    return event;
-}
-// Pass Event Id to ViewEventWindow
-const viewEvent = (eventId: Number) => {
-    ipcRenderer.send('view-event', eventId);
-}
-
 // Check if date is in range
 export const dateCheck = (from: Date, to: Date, check: Date): boolean => {
     let fDate, lDate, cDate;

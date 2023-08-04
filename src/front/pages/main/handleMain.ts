@@ -4,10 +4,8 @@
 // nodeIntegration is set to true in webPreferences.
 // Use preload.js to selectively enable features
 // needed in the renderer process.
-
-
-const { ipcRenderer } = require('electron');
-import calendar from "../calendar/calendar.js";
+import calendar from "./calendar.js";
+import { openWindowAddEvent } from "../../utils/utils_ipc.js";
 
 
 // Display Calendar
@@ -16,6 +14,4 @@ calendar();
 
 // Handle Add Event Button
 const addEventButton = document?.querySelector("#calendar-addEvent");
-addEventButton?.addEventListener('click', () => {
-    ipcRenderer.invoke('add-event');
-});
+addEventButton?.addEventListener('click', () => openWindowAddEvent());

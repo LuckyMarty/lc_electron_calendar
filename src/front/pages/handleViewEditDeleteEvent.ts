@@ -1,6 +1,7 @@
 const { ipcRenderer } = require('electron');
 import { IEvent } from "../../interface/eventInterface.js";
-import { getValueAsString, rangeDate, setStringValue, splitDate } from "../utils.js";
+import { getValueAsString, rangeDate, setStringValue, splitDate } from "../utils/utils.js";
+import { closeCurrentWindow, refreshMainWindow } from "../utils/utils_ipc.js";
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -143,14 +144,4 @@ async function eventUpdate(updateEvent: IEvent) {
 // Delete Data Base
 async function eventDelete(id: number) {
     await ipcRenderer.invoke('bdd-event-delete', id)
-}
-
-// Close Current Window
-function closeCurrentWindow() {
-    ipcRenderer.send('close-current-window');
-}
-
-// Refresh Main Window
-function refreshMainWindow() {
-    ipcRenderer.send('refresh-main-window');
 }

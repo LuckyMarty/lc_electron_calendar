@@ -1,4 +1,4 @@
-import { IICS } from "../interface/ICSInterface";
+import { IICS } from "../../interface/ICSInterface";
 
 
 // ************************

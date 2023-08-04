@@ -1,7 +1,7 @@
 import { BrowserWindow, dialog, ipcMain } from "electron"
 import { eventAdd, eventDelete, eventGetAll, eventGetById, eventUpdate } from "../model/EventModel"
 import { IEvent } from "../../interface/eventInterface";
-import { windowEventAdd } from "../window/windowEventAdd";
+import { windowAddEvent } from "../window/windowAddEvent";
 import { windowViewEditDeleteEvent } from "../window/windowViewEditDeleteEvent";
 const fs = require('fs');
 
@@ -65,12 +65,12 @@ export default (parent: BrowserWindow) => {
     // WINDOWS
     // ************************
     // Add Event Window
-    ipcMain.handle('add-event', () => {
-        windowEventAdd(parent);
+    ipcMain.handle('window-add-event', () => {
+        windowAddEvent(parent);
     })
 
     // View Event Window
-    ipcMain.on('view-event', (event, eventId) => {
+    ipcMain.on('window-view-edit-delete-event', (event, eventId) => {
         windowViewEditDeleteEvent(parent, eventId);
     })
 
