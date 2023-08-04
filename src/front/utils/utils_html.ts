@@ -6,21 +6,21 @@ export const getInput = (element: string): HTMLInputElement => {
 }
 
 export const getValueAsDate = (element: string): Date => {
-    return new Date((document.querySelector(element) as HTMLInputElement).value);
+    return new Date(getInput(element).value);
 }
 
 export const getValueAsString = (element: string): string => {
-    return (document.querySelector(element) as HTMLInputElement).value;
+    return getInput(element).value;
 }
 
 export const getValueAsNumber = (element: string): number => {
-    return parseFloat((document.querySelector(element) as HTMLInputElement).value);
+    return parseFloat(getInput(element).value);
 }
 
 export const emptyValue = (element: string) => {
-    (document.querySelector(element) as HTMLInputElement).value = "";
+    getInput(element).value = "";
 }
 
 export const setStringValue = (element: string, content: string) => {
-    (document.querySelector(element) as HTMLInputElement).value = content;
+    getInput(element).value = content;
 }
