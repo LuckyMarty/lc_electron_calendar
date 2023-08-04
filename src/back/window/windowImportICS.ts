@@ -15,6 +15,7 @@ export function windowImportICS(parent: BrowserWindow) {
         width: 400,
         height: 300,
         title: "Import ICS",
+        resizable: false,
 
         icon: path.join(__dirname, "../../../src/assets/img/icon.png"),
         webPreferences: {

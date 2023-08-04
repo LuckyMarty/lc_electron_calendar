@@ -1,0 +1,106 @@
+@font-face {
+  font-family: "kelsonregular";
+  src: url("../font/kelson/kelson-webfont.woff2") format("woff2"), url("../font/kelson/kelson-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "kelsonbold";
+  src: url("../font/kelson/kelson-bold-webfont.woff2") format("woff2"), url("../font/kelson/kelson-bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "kelsonextrabold";
+  src: url("../font/kelson/kelson-extrabold-webfont.woff2") format("woff2"), url("../font/kelson/kelson-extrabold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "kelsonlight";
+  src: url("../font/kelson/kelson-light-webfont.woff2") format("woff2"), url("../font/kelson/kelson-light-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "kelsonmedium";
+  src: url("../font/kelson/kelson-medium-webfont.woff2") format("woff2"), url("../font/kelson/kelson-medium-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "kelsonthin";
+  src: url("../font/kelson/kelson-thin-webfont.woff2") format("woff2"), url("../font/kelson/kelson-thin-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "kelsonregular";
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  height: 100vh;
+  width: 100vw;
+}
+
+.drag-drop-zone {
+  border: 2px dashed #ccc;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.drag-drop-zone.drag-over {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.drag-drop-zone #file-name {
+  margin-top: 20px;
+}
+.drag-drop-zone #drop-text {
+  display: block;
+}
+.drag-drop-zone input[type=file] {
+  display: none;
+}
+.drag-drop-zone .upload-button {
+  padding: 8px;
+  background-color: #ccc;
+  color: #333;
+  border: none;
+  cursor: pointer;
+}
+.drag-drop-zone .message {
+  display: inline-flex;
+  gap: 8px;
+}
+.drag-drop-zone .message p {
+  margin: 8px 0;
+}
+.drag-drop-zone #importButton {
+  display: none;
+  cursor: pointer;
+  width: 200px;
+  border: none;
+  padding: 14px;
+  margin-top: 25px;
+  font-size: large;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+}
+.drag-drop-zone #importButton:hover {
+  background-color: #f0efeb;
+  color: #000;
+  font-weight: bold;
+}/*# sourceMappingURL=import.css.map */
