@@ -6,4 +6,4 @@ export const connection = {
 }
 
 // Enable / Disable DevTools in every windows
-export const DevTools = true;
+export const DevTools = false;

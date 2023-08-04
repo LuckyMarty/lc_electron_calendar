@@ -1,6 +1,6 @@
-const { ipcRenderer } = require('electron');
 import { IEvent } from "../../interface/eventInterface";
-import { emptyValue, getValueAsString, splitDate } from "../utils/utils.js";
+import { emptyValue, getValueAsString } from "../utils/utils_html.js";
+import { splitDate } from "../utils/utils_date.js";
 import { closeCurrentWindow, eventAdd, refreshMainWindow } from "../utils/utils_ipc.js";
 
 
@@ -34,7 +34,6 @@ if (addEventForm) {
             transparence,
             nbOfUpdate: 0
         }
-
 
         // Send Data
         eventAdd(newEvent);

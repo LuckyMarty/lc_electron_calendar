@@ -1,7 +1,6 @@
-const { ipcRenderer } = require('electron');
 import { IEvent } from "../../interface/eventInterface";
 import { closeCurrentWindow, eventAdd, refreshMainWindow } from "../utils/utils_ipc.js";
-import { parseICS, translateIcalDate } from "../utils/utils.js";
+import { parseICS, translateIcalDate } from "../utils/utils_ics.js";
 
 
 // Save Upload File Data

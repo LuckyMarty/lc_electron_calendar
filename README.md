@@ -6,7 +6,7 @@
 - Add Event
 - Update Event
 - Delete Event
-- Import iCalendar (ics) - sample ics file: [F1 Program 2023](https://github.com/LuckyMarty/lc_electron_calendar/blob/main/F1_Schedule.ics).
+- Import iCalendar (ics) - sample ics file: [F1 Program 2023](https://github.com/LuckyMarty/lc_electron_calendar/blob/main/F1_Schedule.ics)
 - Export as iCalendar (ics)
 
 ## Configurations
@@ -36,6 +36,8 @@ path: src/back/utils.ts
 ```bash
   npm run build:front
 ```
+
+4. Download [Database Model](https://github.com/LuckyMarty/lc_electron_calendar/blob/main/electron_calendar.sql) and import it
 
 ## Launch
 

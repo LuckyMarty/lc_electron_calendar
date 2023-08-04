@@ -1,5 +1,5 @@
 import { IEvent } from "../../interface/eventInterface";
-import { dateCheck, getDateToString, getTimeToString, sameDate } from "./utils_date.js";
+import { isDateInRange, getDateToString, getTimeToString, isSameDate } from "./utils_date.js";
 import { getAllEvents, sendEventIdToViewEditDeleteWindow } from "./utils_ipc.js";
 
 export function dayName(day: number = 1) {
@@ -44,7 +44,7 @@ export async function displayEvents(cell: HTMLElement, currentMonth: number, dat
     let events: Array<IEvent> = [];
     if (result) {
         result.forEach(element => {
-            if (dateCheck(new Date(element.date_deb), new Date(element.date_fin), new Date(`${currentMonth + 1}/${date}/${currentYear}`))) {
+            if (isDateInRange(new Date(element.date_deb), new Date(element.date_fin), new Date(`${currentMonth + 1}/${date}/${currentYear}`))) {
                 events.push(element);
             }
         });
@@ -53,7 +53,7 @@ export async function displayEvents(cell: HTMLElement, currentMonth: number, dat
     if (events) {
         events.forEach(event => {
             if (event.id) {
-                if (sameDate(event.date_deb, event.date_fin)) {
+                if (isSameDate(event.date_deb, event.date_fin)) {
                     let from = `${getTimeToString(event.date_deb)}`;
                     let to = `${getTimeToString(event.date_fin)}`;
                     cell.append(createEventCard(event.id, event.titre, `${from} - ${to}`));

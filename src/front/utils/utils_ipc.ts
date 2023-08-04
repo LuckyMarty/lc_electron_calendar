@@ -13,6 +13,14 @@ export const eventAdd = async (newEvent: IEvent) => {
     await ipcRenderer.invoke('bdd-event-add', newEvent)
 }
 
+export const eventUpdate = async (updateEvent: IEvent) => {
+    await ipcRenderer.invoke('bdd-event-update', updateEvent)
+}
+
+export const eventDelete = async (id: number) => {
+    await ipcRenderer.invoke('bdd-event-delete', id)
+}
+
 export const sendEventIdToViewEditDeleteWindow = (eventId: Number) => {
     ipcRenderer.send('window-view-edit-delete-event', eventId);
 }

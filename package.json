@@ -1,8 +1,8 @@
 {
-  "name": "electron-quick-start-typescript",
+  "name": "lucky-marty",
   "version": "1.0.0",
   "description": "A minimal Electron application written with Typescript",
-  "main": "./dist/back/main.js",
+  "main": "./dist/back/window/windowMain.js",
   "scripts": {
     "build:back": "tsc --project tsconfig_back.json --watch",
     "build:front": "tsc --project tsconfig_front.json --watch",
