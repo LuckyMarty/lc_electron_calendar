@@ -6,7 +6,7 @@ import { DevTools } from "../utils";
 // ************************
 // ADD EVENT WINDOW
 // ************************
-export function windowEventAdd(parent: BrowserWindow) {
+export function windowAddEvent(parent: BrowserWindow) {
     // Create window
     const window = new BrowserWindow({
         modal: true,

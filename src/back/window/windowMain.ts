@@ -1,12 +1,10 @@
-import { app, BrowserWindow, dialog, ipcRenderer, Menu } from "electron";
+import { app, BrowserWindow, Menu } from "electron";
 import * as path from "path";
-import EventEvent from "./event/EventEvent";
-import { windowEventAdd } from "./window/windowEventAdd";
-import { DevTools } from "./utils";
-import { windowImportICS } from "./window/windowImportICS";
-import { windowExportICS } from "./window/windowExportICS";
-import { eventGetAll } from "./model/EventModel";
-import { IEvent } from "../interface/eventInterface";
+import EventEvent from "../event/EventEvent";
+import { windowAddEvent } from "./windowAddEvent";
+import { DevTools } from "../utils";
+import { windowImportICS } from "./windowImportICS";
+import { windowExportICS } from "./windowExportICS";
 
 
 // ************************
@@ -16,7 +14,7 @@ function createWindow() {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
     title: "Lucky Marty - Electron Calendar",
-    icon: path.join(__dirname, "../../src/assets/img/icon.png"),
+    icon: path.join(__dirname, "../../../src/assets/img/icon.png"),
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
@@ -77,7 +75,7 @@ function createWindow() {
         {
           label: 'Add',
           type: 'normal',
-          click: () => windowEventAdd(mainWindow)
+          click: () => windowAddEvent(mainWindow)
         }
       ]
     }

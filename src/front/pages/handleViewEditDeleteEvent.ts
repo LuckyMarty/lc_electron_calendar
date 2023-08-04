@@ -1,6 +1,8 @@
 const { ipcRenderer } = require('electron');
 import { IEvent } from "../../interface/eventInterface.js";
-import { getValueAsString, rangeDate, setStringValue, splitDate } from "../utils.js";
+import { getValueAsString, setStringValue } from "../utils/utils_html.js";
+import { rangeDate, splitDate } from "../utils/utils_date.js";
+import { closeCurrentWindow, eventDelete, eventUpdate, refreshMainWindow } from "../utils/utils_ipc.js";
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -133,24 +135,4 @@ function editable(status: boolean) {
             input.readOnly = false;
         })
     }
-}
-
-// Update Data Base
-async function eventUpdate(updateEvent: IEvent) {
-    await ipcRenderer.invoke('bdd-event-update', updateEvent)
-}
-
-// Delete Data Base
-async function eventDelete(id: number) {
-    await ipcRenderer.invoke('bdd-event-delete', id)
-}
-
-// Close Current Window
-function closeCurrentWindow() {
-    ipcRenderer.send('close-current-window');
-}
-
-// Refresh Main Window
-function refreshMainWindow() {
-    ipcRenderer.send('refresh-main-window');
 }
